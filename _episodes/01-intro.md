@@ -1,5 +1,5 @@
 ---
-title: "Introducing the Shell"
+title: "Introducing the Shell Adventure"
 teaching: 5
 exercises: 0
 questions:
