@@ -177,6 +177,6 @@ Can you read the email that was received on day that JOEBLOGGS disappeared?
 > In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
 > format to view timestamps.
 >
-{: .challenge}
+{: .solution}
 
 
