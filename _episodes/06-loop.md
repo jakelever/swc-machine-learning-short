@@ -25,6 +25,10 @@ $ sh tools/decrypt.sh EINSTEIN emails/martin_bishop.SOMEDATA.txt
 ~~~
 {: .bash}
 
+## Loops
+
+## Challenge
+
 ~~~
 $ for email in emails/martin_bishop.*
 $ do
@@ -32,3 +36,7 @@ $ sh tools/decrypt.sh EINSTEIN $email
 $ done
 ~~~
 {: .bash}
+
+## Bonus Points
+
+Can you decrypt any other emails using other passwords that you found?
