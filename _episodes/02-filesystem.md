@@ -155,8 +155,18 @@ $ pwd
 > You don't have to retype every command every time. Try using the up and down arrows on the keyboard to cycle through previous commands.
 {: .callout}
 
-TODO: Maybe an ls here?
-Let's keep going to the downloaded files (TODO: add a link with extra instructions).
+
+~~~
+$ ls
+~~~
+{: .bash}
+
+~~~
+data-shell
+~~~
+{: .output}
+
+Let's keep going to the downloaded files. You should have already downloaded them to the Desktop. If you haven't already, go to the [setup page](../setup/) TODO: Check link.
 
 ~~~
 $ cd data-shell
@@ -182,6 +192,46 @@ TODO: Results go here
 
 Hmm, maybe that README file would tell us more about the files.
 
+## Let's check out the research files
+
+~~~
+$ cd research_files
+$ ls
+~~~
+{: .bash}
+
+~~~
+project_arcturus  project_columbia  project_smith
+project_asimov    project_gibson    project_titan
+~~~
+{: .output}
+
+## Going back
+
+If you go into the `research_files` directory but want to go back out, you can use the `cd ..` command. `.` and `..` are special cases in the shell. `.` means here and `..` means up one.
+
+~~~
+$ pwd
+$ cd ..
+$ pwd
+~~~
+{: .bash}
+~~~
+/home/exampleuser/Desktop/shell-novice-adventure/data-shell/research_files
+/home/exampleuser/Desktop/shell-novice-adventure/data-shell
+
+~~~
+{: .output}
+
+> ## ls can take a directory as an argument
+>
+> Instead of using a combination of `cd` and `ls` to see the contents of a directory, you can give the name of the directory to `ls` and it will list the contents. But remember, `ls` won't change the current working directory. If you want to move into that directory, you'll still need to use `cd`.
+> ~~~
+> $ ls research_files
+> ~~~
+> {: .bash}
+{: .callout}
+
 ## Reading Tiny Files
 
 The `cat` command is a very basic command that displays the contents of a file. It actually stands for concatenate as you can use it to concatenate multiple files. You should only use it to display very small files which will contain unformatted text. It can't deal with things like PDFs or Word documents. Its most basic usage involves one argument: the name of the file you want to display.
@@ -197,12 +247,7 @@ Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the GIBSON proje
 
 > ## Solution
 >
-> The command `ls -R` lists the contents of directories recursively, i.e., lists
-> their sub-directories, sub-sub-directories, and so on in alphabetical order
-> at each level. The command `ls -t` lists things by time of last change, with
-> most recently changed files or directories first.
-> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
-> format to view timestamps.
+
 >
 {: .solution}
 
