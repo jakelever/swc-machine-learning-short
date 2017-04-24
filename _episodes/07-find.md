@@ -48,7 +48,7 @@ $ find emails -name 'martin_bishop*'
 {: .bash}
 
 
-## Challenge Time
+## Exercise
 
 The name of the file mentioned in the email was "babbage.txt". Can you find it in the "research_files" directory?
 
@@ -56,6 +56,17 @@ The name of the file mentioned in the email was "babbage.txt". Can you find it i
 $ find ./research_files -name 'babbage.txt'
 ~~~
 {: .bash}
+
+> ## Solution
+>
+> The command `ls -R` lists the contents of directories recursively, i.e., lists
+> their sub-directories, sub-sub-directories, and so on in alphabetical order
+> at each level. The command `ls -t` lists things by time of last change, with
+> most recently changed files or directories first.
+> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
+> format to view timestamps.
+>
+{: .solution}
 
 ## Bonus Points
 
