@@ -177,10 +177,6 @@ Can you read the email that was received on day that JOEBLOGGS disappeared?
 > In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
 > format to view timestamps.
 >
-> > ## Solution
-> > The directories are listed alphabetical at each level, the files/directories
-> > in each directory are sorted by time of last change.
-> {: .solution}
 {: .challenge}
 
 
