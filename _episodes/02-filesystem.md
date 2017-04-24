@@ -162,14 +162,14 @@ $ ls
 {: .bash}
 
 ~~~
-data-shell
+adventure-data
 ~~~
 {: .output}
 
 Let's keep going to the downloaded files. You should have already downloaded them to the Desktop. If you haven't already, go to the [setup page](../setup/) TODO: Check link.
 
 ~~~
-$ cd data-shell
+$ cd adventure-data
 ~~~
 {: .bash}
 
@@ -217,9 +217,8 @@ $ pwd
 ~~~
 {: .bash}
 ~~~
-/home/exampleuser/Desktop/shell-novice-adventure/data-shell/research_files
-/home/exampleuser/Desktop/shell-novice-adventure/data-shell
-
+/home/exampleuser/Desktop/adventure-data/research_files
+/home/exampleuser/Desktop/adventure-data
 ~~~
 {: .output}
 
@@ -243,11 +242,18 @@ $ cat README.md
 
 ## Exercise
 
-Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the GIBSON project? It will be in the research_files directory.
+Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the gibson project? It will be in the research_files directory.
 
 > ## Solution
 >
-
+> ~~~
+> $ cd research_files
+> $ ls
+> $ cd project_gibson
+> $ ls
+> $ cat summary.txt
+> ~~~
+> {: .bash}
 >
 {: .solution}
 
