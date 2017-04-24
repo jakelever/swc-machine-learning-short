@@ -47,16 +47,5 @@ $ grep password emails/*
 ~~~
 {: .bash}
 
-~~~
-$ sh tools/decrypt.sh EINSTEIN emails/martin_bishop.SOMEDATA.txt
-~~~
-{: .bash}
 
-~~~
-$ for email in emails/martin_bishop.*
-$ do
-$ sh tools/decrypt.sh EINSTEIN $email
-$ done
-~~~
-{: .bash}
 
