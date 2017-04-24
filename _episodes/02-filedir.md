@@ -92,6 +92,16 @@ This gives the contents of current directory.
 
 TODO: Talk about flags here or later?
 
+~~~
+$ ls -l
+~~~
+{: .bash}
+
+~~~
+TODO: Results go here
+~~~
+{: .output}
+
 ## I want to go somewhere
 
 It's not much fun staying in the same place, so to get moving we use `cd`. It stands for "change directory". But it normally takes one "argument". An argument is an extra piece of information about what the command should do. In this case, the extra piece is where we should move to. The easiest is the name of a directory in our current working directory. Let's try moving to the Desktop (which is normally a directory called Desktop in your home directory.
