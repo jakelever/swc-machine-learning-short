@@ -193,7 +193,7 @@ $ cat README.md
 
 ## Exercise
 
-Can you read the summary for the GIBSON project? It will be in the research_files directory.
+Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the GIBSON project? It will be in the research_files directory.
 
 > ## Solution
 >
@@ -206,4 +206,7 @@ Can you read the summary for the GIBSON project? It will be in the research_file
 >
 {: .solution}
 
+## Bonus Points
+
+- Can you read the README file about the tools that are supplied?
 
