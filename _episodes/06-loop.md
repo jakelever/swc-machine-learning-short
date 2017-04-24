@@ -27,7 +27,7 @@ $ sh tools/decrypt.sh EINSTEIN emails/martin_bishop.SOMEDATA.txt
 
 ## Loops
 
-## Challenge
+## Exercise
 
 ~~~
 $ for email in emails/martin_bishop.*
