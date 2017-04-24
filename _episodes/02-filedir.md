@@ -168,11 +168,19 @@ $ cat README.md
 ## Your Challenge
 Can you read the email that was received on day that JOEBLOGGS disappeared?
 
-> ### Solution
-> The `-l` arguments makes `ls` use a **l**ong listing format, showing not only
-> the file/directory names but also additional information such as the file size
-> and the time of its last modification. The `-h` argument makes the file size
-> "**h**uman readable", i.e. display something like `5.3K` instead of `5369`.
+> ## Listing Recursively and By Time
+>
+> The command `ls -R` lists the contents of directories recursively, i.e., lists
+> their sub-directories, sub-sub-directories, and so on in alphabetical order
+> at each level. The command `ls -t` lists things by time of last change, with
+> most recently changed files or directories first.
+> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
+> format to view timestamps.
+>
+> > ## Solution
+> > The directories are listed alphabetical at each level, the files/directories
+> > in each directory are sorted by time of last change.
+> {: .solution}
 {: .challenge}
 
 
