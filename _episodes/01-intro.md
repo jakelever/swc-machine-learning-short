@@ -34,11 +34,11 @@ Dr Gill was last seen working late in his office at Sandford Biotechnologies on 
 
 ### Who is Richard Gill?
 
-Dr Gill is director of research at Sandford Biotechnologies. After a distinguished research career in academia, he moved into industry and has been leading the drug development team at Sandford.
+Dr Gill is director of research at Sandford Biotechnologies. After a distinguished research career in academia, he moved into industry and has been leading the drug development team at Sandford. He was known to be working on a project codenamed GIBSON.
 
 ### What is Sandford Biotechnologies?
 
-Sandford Biotechnologies is a research company that focuses on developing therapeutics for the human cortico-deficiency virus (HCDV).
+Sandford Biotechnologies is a research company that focuses on developing therapeutics for a variety of human diseases.
 
 ### What files do we have?
 
