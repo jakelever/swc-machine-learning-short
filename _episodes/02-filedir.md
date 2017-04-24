@@ -42,7 +42,7 @@ The image below gives a summary of the filesystem that we're going to be looking
 ![The File System](../fig/filesystem.svg)
 TODO: Make a partial filesystem with question marks for places we're going to investigate. Specifically make the tools directory something we know about and the laptop contents a mystery.
 
-### Starting Off
+## Starting Off
 
 Several commands are frequently used to create, inspect, rename, and delete files and directories.
 To start exploring them,
@@ -58,7 +58,7 @@ your shell may use a different character as a prompt and may add information bef
 the prompt. When typing commands, either from these lessons or from other sources,
 do not type the prompt, only the commands that follow it.
 
-### Where am I?
+## Where am I?
 
 Using a graphical user interface (GUI), you use double-click a folder and it shows the contents of that folder in a window (known as Explorer in Windows and Finder on Macs). First we want to know where in the filesystem we are. For that we use the `pwd` command. It stands for "print working directory". The working directory is the name used for the directory that we are currently in. All commands that we run will be based in this directory (unless we specify otherwise).
 
@@ -74,7 +74,7 @@ $ pwd
 
 TODO: Mention home directory.
 
-### What is here?
+## What is here?
 
 With a GUI, the files appear as little icons. But with the shell, we need to use a command to get a list of files in the current working directory. For that we use `ls` which stands for "list".
 
@@ -92,7 +92,7 @@ This gives the contents of current directory.
 
 TODO: Talk about flags here or later?
 
-### I want to go somewhere
+## I want to go somewhere
 
 It's not much fun staying in the same place, so to get moving we use `cd`. It stands for "change directory". But it normally takes one "argument". An argument is an extra piece of information about what the command should do. In this case, the extra piece is where we should move to. The easiest is the name of a directory in our current working directory. Let's try moving to the Desktop (which is normally a directory called Desktop in your home directory.
 
@@ -114,7 +114,7 @@ $ pwd
 {: .output}
 
 
-> ## Up and Down arrows
+> ### Up and Down arrows
 >
 > TODO: Up and Down arrows
 {: .callout}
@@ -127,7 +127,7 @@ $ cd data-shell
 ~~~
 {: .bash}
 
-> ## Tab-complete
+> ### Tab-complete
 >
 > TODO: Example tab complete
 {: .callout}
@@ -146,7 +146,7 @@ TODO: Results go here
 
 Hmm, maybe that README file would tell us more about the files.
 
-### Example Challenge
+## Example Challenge
 
 The `cat` command is a very basic command that displays the contents of a file. It actually stands for concatenate as you can use it to concatenate multiple files. You should only use it to display very small files which will contain unformatted text. It can't deal with things like PDFs or Word documents. Its most basic usage involves one argument: the name of the file you want to display.
 
@@ -155,10 +155,14 @@ $ cat README.md
 ~~~
 {: .bash}
 
-### Example Problem
-
-
-### Your Challenge
+## Your Challenge
 Can you read the email that was received on day that JOEBLOGGS disappeared?
+
+> ### Solution
+> > The `-l` arguments makes `ls` use a **l**ong listing format, showing not only
+> > the file/directory names but also additional information such as the file size
+> > and the time of its last modification. The `-h` argument makes the file size
+> > "**h**uman readable", i.e. display something like `5.3K` instead of `5369`.
+> {: .solution}
 
 
