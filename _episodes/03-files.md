@@ -110,8 +110,7 @@ $ mv results.tsv summary-ACC_9530294.tsv
 
 TODO: Fit in rm in here
 
-## The Challenge
-
+## Exercise
 Can you get a summary for all the accounts?
 
 > ## Solution
