@@ -158,7 +158,7 @@ $ cat README.md
 ## Your Challenge
 Can you read the email that was received on day that JOEBLOGGS disappeared?
 
-> ### Solution
+> > ### Solution
 > > The `-l` arguments makes `ls` use a **l**ong listing format, showing not only
 > > the file/directory names but also additional information such as the file size
 > > and the time of its last modification. The `-h` argument makes the file size
