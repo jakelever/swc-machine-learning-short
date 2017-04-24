@@ -123,7 +123,7 @@ $ ls --help
 ~~~
 {: .bash}
 
-> ### The Manual
+> ## The Manual
 >
 > On most linux machine, there is a `man` command that gives you the manual for a command. So `man ls` gives a similar output to `ls --help`. So commands don't use `--help` and some don't have a manual page. Unfortunately git for windows doesn't support `man`. In that cause, a quick Google search for "man page" plus the name of the command will provide the relevant information.
 {: .callout}
@@ -150,7 +150,7 @@ $ pwd
 {: .output}
 
 
-> ### Up and Down arrows
+> ## Up and Down arrows
 >
 > TODO: Up and Down arrows
 {: .callout}
@@ -163,7 +163,7 @@ $ cd data-shell
 ~~~
 {: .bash}
 
-> ### Tab-complete
+> ## Tab-complete
 >
 > TODO: Example tab complete
 {: .callout}
