@@ -13,14 +13,33 @@ keypoints:
 - "The shell's main disadvantages are its primarily textual nature and how cryptic its commands and operation can be."
 ---
 
-TODO: Short intro to the terminal with an image or two
+A computer program does three main things:
+- Takes input from the user
+- Does something with the input (i.e. processes it)
+- Display the results to the user
+
+Today, we're going to learn about the unix shell. To many, it's the classic image of older computers. There are no images or icons, just text on a black screen.
+
+![Unix Shell Example](https://upload.wikimedia.org/wikipedia/commons/b/bf/Version_7_UNIX_SIMH_PDP11_Kernels_Shell.png)
+
+The unix shell is just another program. It is used to run other programs. The input it takes is what program to run, and the output it gives is the results of the program. One of the advantages of the shell is that typing the commands is much faster than clicking through various menus (that is once you know the commands).
 
 ## The Story Begins
 
-You are all digitial forensics specialists and have been given a new high profile case.
+You are all digitial forensics specialists and have been given a new high profile case. The acclaimed scientist, Richard Gill, has gone missing. You have been tasked with investigating his laptop contents and research files to find any clues that may explain his disappearance.
 
-- What's the case?
-- What are you provided?
-- What things might we do?
-- 
-- 
+### Details
+
+Dr Gill was last seen working late in his office at Sandford Biotechnologies on the evening of April 12th. His wife reported him missing the next morning when she found he hadn't returned from work. His car is missing. No activity has been found on his bank accounts since his disappearance.
+
+### Who is Richard Gill?
+
+Dr Gill is director of research at Sandford Biotechnologies. After a distinguished research career in academia, he moved into industry and has been leading the drug development team at Sandford.
+
+### What is Sandford Biotechnologies?
+
+Sandford Biotechnologies is a research company that focuses on developing therapeutics for the human cortico-deficiency virus (HCDV).
+
+### What files do we have?
+
+We have his emails, his bank statements and his research files.
