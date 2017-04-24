@@ -71,6 +71,9 @@ $ sort -n email_counts
 
 ## TODO: Introduce pipes
 
+
+## Challenge
+
 ~~~
 $ wc -l emails/* | sort -n
 ~~~
@@ -82,3 +85,17 @@ $ wc -l emails/* | sort -n | tail -n 2 | head -n 1
 {: .bash}
 
 TODO: Maybe include head/tail in the reading emails exercise later?
+
+> ## Solution
+>
+> The command `ls -R` lists the contents of directories recursively, i.e., lists
+> their sub-directories, sub-sub-directories, and so on in alphabetical order
+> at each level. The command `ls -t` lists things by time of last change, with
+> most recently changed files or directories first.
+> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
+> format to view timestamps.
+>
+{: .solution}
+
+
+
