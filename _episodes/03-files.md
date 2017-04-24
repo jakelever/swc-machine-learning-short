@@ -20,6 +20,28 @@ keypoints:
 - "Nano is a very simple text editor: please use something else for real work."
 ---
 
+## Getting straight to the point
+
+You don't always need to do a set of `cd` commands to get to a directory, when one will do it.
+
+~~~
+$ cd research_files/project_gibson/
+$ cat summary.txt
+~~~
+{: .bash}
+
+Or without the `cd`:
+
+~~~
+$ cat research_files/project_gibson/summary.txt
+~~~
+{: .bash}
+
+> ## Tab-complete
+>
+> Shell users are lazy and typing out long filenames is tedious. If you've started typing a filename, you can press Tab and the shell will try to complete the rest (if there is only one possibility).
+{: .callout}
+
 ## Starting some Analysis
 
 Make sure we're in the data-shell directory
