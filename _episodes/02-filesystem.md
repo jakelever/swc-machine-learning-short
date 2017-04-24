@@ -130,7 +130,7 @@ $ ls --help
 
 ## I want to go somewhere
 
-It's not much fun staying in the same place, so to get moving we use `cd`. It stands for "change directory". But it normally takes one "argument". An argument is an extra piece of information about what the command should do. In this case, the extra piece is where we should move to. The easiest is the name of a directory in our current working directory. Let's try moving to the Desktop (which is normally a directory called Desktop in your home directory.
+It's not much fun staying in the same place, so to get moving we use `cd`. It stands for "change directory". But it normally takes one argument. In this case, the extra piece is where we should move to. The easiest is the name of a directory in our current working directory. Let's try moving to the Desktop (which is normally a directory called Desktop in your home directory.
 
 ~~~
 $ cd Desktop
@@ -152,7 +152,7 @@ $ pwd
 
 > ## Up and Down arrows
 >
-> TODO: Up and Down arrows
+> You don't have to retype every command every time. Try using the up and down arrows on the keyboard to cycle through previous commands.
 {: .callout}
 
 TODO: Maybe an ls here?
@@ -165,7 +165,7 @@ $ cd data-shell
 
 > ## Tab-complete
 >
-> TODO: Example tab complete
+> Shell users are lazy and typing out long filenames is tedious. If you've started typing a filename, you can press Tab and the shell will try to complete the rest (if there is only one possibility).
 {: .callout}
 
 Let's check what we've got.
@@ -182,7 +182,7 @@ TODO: Results go here
 
 Hmm, maybe that README file would tell us more about the files.
 
-## Example Challenge
+## Reading Tiny Files
 
 The `cat` command is a very basic command that displays the contents of a file. It actually stands for concatenate as you can use it to concatenate multiple files. You should only use it to display very small files which will contain unformatted text. It can't deal with things like PDFs or Word documents. Its most basic usage involves one argument: the name of the file you want to display.
 
@@ -192,7 +192,8 @@ $ cat README.md
 {: .bash}
 
 ## Exercise
-Can you read the email that was received on day that JOEBLOGGS disappeared?
+
+Can you read the summary for the GIBSON project? It will be in the research_files directory.
 
 > ## Solution
 >
