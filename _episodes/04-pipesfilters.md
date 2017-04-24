@@ -72,7 +72,7 @@ $ sort -n email_counts
 ## TODO: Introduce pipes
 
 
-## Challenge
+## Exercise
 
 ~~~
 $ wc -l emails/* | sort -n
