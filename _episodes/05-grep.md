@@ -46,7 +46,7 @@ I wonder if he used a similar password for everything.
 
 TODO: Introduce grep
 
-## Challenge
+## Exercise
 
 ~~~
 $ grep password emails/*
