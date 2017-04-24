@@ -37,16 +37,15 @@ which hold information,
 and directories (also called "folders"),
 which hold files or other directories.
 
-The image below gives a summary of the filesystem that we're going to be looking at. You can see that the ??? folder is inside the ??? folder. And that the README.md file is inside the ??? folder.
+The image below gives a summary of the filesystem that we're going to be looking at. You can see that the email folder is inside the adventure-data folder. And that the README.md file is inside the ??? folder.
 
 ![The File System](../fig/filesystem.svg)
+
 TODO: Make a partial filesystem with question marks for places we're going to investigate. Specifically make the tools directory something we know about and the laptop contents a mystery.
 
 ## Starting Off
 
-Several commands are frequently used to create, inspect, rename, and delete files and directories.
-To start exploring them,
-let's open a shell window:
+Several commands are frequently used to create, inspect, rename, and delete files and directories. To start exploring them, let's open a shell window:
 
 ~~~
 $
@@ -60,7 +59,9 @@ do not type the prompt, only the commands that follow it.
 
 ## Where am I?
 
-Using a graphical user interface (GUI), you use double-click a folder and it shows the contents of that folder in a window (known as Explorer in Windows and Finder on Macs). First we want to know where in the filesystem we are. For that we use the `pwd` command. It stands for "print working directory". The working directory is the name used for the directory that we are currently in. All commands that we run will be based in this directory (unless we specify otherwise).
+Windows and MacOS uses a graphical user interface (GUI) to let you interact with files. You can click on folders to move around the file system and see everything presented as icons. With the shell, everything is presented as text and the way to interact is by typing commands.
+
+First we want to know where in the filesystem we are. For that we use the `pwd` command. It stands for "print working directory". The working directory is the name used for the directory that we are currently in. All commands that we run will be based in this directory (unless we specify otherwise).
 
 ~~~
 $ pwd
@@ -72,7 +73,12 @@ $ pwd
 ~~~
 {: .output}
 
-TODO: Mention home directory.
+The output will look different for you and depend on what type of system you are using and your own username. The first forward slash designates the root of the whole file system. We are then inside the home directory, and then inside the exampleuser directory.
+
+> ### Home directory
+>
+> You normally start in your home directory. On Linux, this is normally /home/USERNAME, for windows it is /C/Users/USERNAME and for MacOsX it is /Users/USERNAME (where USERNAME is your username).
+{: .callout}
 
 ## What is here?
 
@@ -84,13 +90,18 @@ $ ls
 {: .bash}
 
 ~~~
-TODO: Results go here
+documents Desktop downloads thesis.pdf
 ~~~
 {: .output}
 
-This gives the contents of current directory.
+This gives the contents of current directory. Notice that it shows both files and directories.
 
-TODO: Talk about flags here or later?
+> ### Arguments
+>
+> When you call a command, you can give it extra information on what it should do. These are often called arguments or parameters. This might be a signal to give the output in a different format, or to process a different file. It depends on the program.
+{: .callout}
+
+A useful argument for `ls` is to get more details using `-l`. Try it out. Now each file/directory is on each line with extra information.
 
 ~~~
 $ ls -l
@@ -98,9 +109,24 @@ $ ls -l
 {: .bash}
 
 ~~~
-TODO: Results go here
+drwxr-sr-x  2 exampleuser users 4096 Apr 23 15:39 documents
+drwxr-sr-x  2 exampleuser users 4096 Apr 23 15:39 Desktop
+drwxr-sr-x  2 exampleuser users 4096 Apr 23 15:39 downloads
+-rw-r--r--  1 exampleuser users  210 Apr 23 15:39 thesis.pdf
 ~~~
 {: .output}
+
+The `ls` command has a lot of possible arguments. Many commands will give you more information using the `--help` argument. Give it a try with ls.
+
+~~~
+$ ls --help
+~~~
+{: .bash}
+
+> ### The Manual
+>
+> On most linux machine, there is a `man` command that gives you the manual for a command. So `man ls` gives a similar output to `ls --help`. So commands don't use `--help` and some don't have a manual page. Unfortunately git for windows doesn't support `man`. In that cause, a quick Google search for "man page" plus the name of the command will provide the relevant information.
+{: .callout}
 
 ## I want to go somewhere
 
