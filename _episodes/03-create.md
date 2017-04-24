@@ -44,15 +44,37 @@ $ ls ../tools
 
 Finances seem like a good place to start
 
+TODO: Introduce `sh` command
+
 ~~~
 $ sh ../tools/finance_summary.sh --help
 ~~~
 {: .bash}
 
+The script will load files from the statements folder and save to a summary.tsv file.
+
+
 ## Running a tool
 
+TODO: Introduce each command
+
 ~~~
-$ sh ../tools/finance_summary.sh ../bank_statements/2016-01/
+$ mkdir statements
+~~~
+{: .bash}
+
+~~~
+$ cp accounts/ADKLANSDLASD/2016-01-01.tsv statements
+~~~
+{: .bash}
+
+~~~
+$ cp accounts/ADKLANSDLASD/* statements
+~~~
+{: .bash}
+
+~~~
+$ sh ../tools/finance_summary.sh
 ~~~
 {: .bash}
 
@@ -68,9 +90,9 @@ $ cat results.tsv
 
 Outputs file to results.tsv. BIG RED FLAG that this is a bad script!!!
 
-Let's try it for another month
+Let's try it for one account
 ~~~
-$ sh ../tools/finance_summary.sh ../bank_statements/2016-02/
+$ sh ../tools/finance_summary.sh
 ~~~
 {: .bash}
 
@@ -82,6 +104,16 @@ ERROR: results.tsv already exists
 Oh no. We'll need to move or delete the file!
 
 ~~~
-$ mv results.tsv summary-2016-01.tsv
+$ mv results.tsv summary-ACC_9530294.tsv
 ~~~
 {: .bash}
+
+TODO: Fit in rm in here
+
+## The Challenge
+
+Can you get a summary for all the accounts?
+
+## Bonus Points
+
+Could you create a script that takes as input a directory and filename for output and runs the summary script?
