@@ -168,7 +168,7 @@ $ cat README.md
 ## Your Challenge
 Can you read the email that was received on day that JOEBLOGGS disappeared?
 
-> ## Listing Recursively and By Time
+> ## Solution
 >
 > The command `ls -R` lists the contents of directories recursively, i.e., lists
 > their sub-directories, sub-sub-directories, and so on in alphabetical order
