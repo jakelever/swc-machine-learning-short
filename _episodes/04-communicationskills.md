@@ -1,5 +1,5 @@
 ---
-title: "Pipes and Filters"
+title: "Communication Skills"
 teaching: 15
 exercises: 0
 questions:
