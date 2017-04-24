@@ -114,6 +114,17 @@ TODO: Fit in rm in here
 
 Can you get a summary for all the accounts?
 
+> ## Solution
+>
+> The command `ls -R` lists the contents of directories recursively, i.e., lists
+> their sub-directories, sub-sub-directories, and so on in alphabetical order
+> at each level. The command `ls -t` lists things by time of last change, with
+> most recently changed files or directories first.
+> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
+> format to view timestamps.
+>
+{: .solution}
+
 ## Bonus Points
 
 Could you create a script that takes as input a directory and filename for output and runs the summary script?
