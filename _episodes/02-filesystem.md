@@ -165,7 +165,7 @@ $ cat README.md
 ~~~
 {: .bash}
 
-## Your Challenge
+## Exercise
 Can you read the email that was received on day that JOEBLOGGS disappeared?
 
 > ## Solution
