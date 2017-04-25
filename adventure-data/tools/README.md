@@ -12,5 +12,6 @@ sh finance_summary.sh --help
 
 ## Overview
 - decrypt.sh - A tool for decrypting encrypted email messages
+- display_project_summaries.sh - A tool for quickly outputting the project summaries
 - finance_summary.sh - A tool for summarizing data from bank statemetns
 

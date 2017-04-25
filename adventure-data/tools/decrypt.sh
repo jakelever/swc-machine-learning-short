@@ -1,12 +1,15 @@
 #!/bin/bash
 set -euo pipefail
 
-if [[ $# -ne 2 ]]; then
+function usage {
 	echo "USAGE: sh decrypt.sh PASSWORD FILE"
 	echo
 	echo "PASSWORD: The password used to encrypt the file"
 	echo "FILE: The file to decrypt"
 	exit 1
+}
+if [[ $# -ne 2 ]]; then
+	usage
 fi
 
 password=$1
