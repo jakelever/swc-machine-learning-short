@@ -1,5 +1,5 @@
 ---
-title: "Shell Scripts"
+title: "Loopy"
 teaching: 15
 exercises: 0
 questions:
