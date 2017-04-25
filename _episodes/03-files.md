@@ -84,7 +84,7 @@ $ sh tools/display_project_summaries.sh
 
 ## Financial Summaries
 
-Let's find out about the finance_summary.sh script. The code for it is a lot more complicated than `display_project_summaries.sh` so we're not going to look at it.
+Let's find out about the finance_summary.sh script. The code for it is a lot more complicated than `display_project_summaries.sh` so we're not going to look at it using `cat`.
 
 What happens if we run it?
 
@@ -127,6 +127,10 @@ Using `ls`, we can see that a directory has been made.
 $ ls
 ~~~
 {: .bash}
+~~~
+bank_statements  contacts.txt  emails  email_summaries  README.md  research_files  tmp_statements  tools
+~~~
+{: .output}
 
 Then we need to copy one of the account statements into the statements directory. For that we will use `cp` which stands for "copy". It takes two or more arguments. The final argument is the destination to copy to. And the remaining ones are the files to copy.
 
@@ -141,6 +145,10 @@ We can check the contents of 'tmp_statements' and see that the file has been cop
 $ ls tmp_statements/
 ~~~
 {: .bash}
+~~~
+ACCNO_00497405_statement.txt
+~~~
+{: .output}
 
 If we check the bank_statements folder, we'll see that it hasn't be removed.
 
@@ -157,6 +165,11 @@ Let's try the script again.
 $ sh tools/finance_summary.sh
 ~~~
 {: .bash}
+~~~
+Summary saved to finance_results.txt using 1 statement(s) from the following account(s):
+ACCNO_00497405
+~~~
+{: .output}
 
 Yay, it worked this time. We can look at the finance_results file using `cat`.
 
@@ -231,17 +244,39 @@ $ sh tools/finance_summary.sh
 ~~~
 {: .bash}
 
-Again there's nothing much going on. Let's use the wildcard to clear out the tmp_statements directory.
+Great it worked. 
+
+## Top and Bottom of a File
+
+Let's have a look at the financials and see if anything sticks out.
+
+~~~
+$ cat finance_results.txt
+~~~
+{: .bash}
+
+Hmm, the output is getting a little long. We should use the `head` command to get the first 10 lines of the file.
+
+~~~
+$ head finance_results.txt
+~~~
+{: .bash}
+
+That's better. But there's nothing obvious here.
+
+## Clearing out files
+
+Let's use the wildcard to clear out the tmp_statements directory.
 
 ~~~
 $ rm tmp_statements/*
 ~~~
 {: .bash}
 
-TODO: Include head if it doesn't fit better somewhere else
-
 ## Exercise
 Can you calculate a summary for all the accounts together? Does anything stick out?
+
+Don't forget to move or delete the finance_results.txt file.
 
 > ## Solution
 >
@@ -256,4 +291,4 @@ Can you calculate a summary for all the accounts together? Does anything stick o
 ## Bonus Points
 
 - What happens if you move to tools directory (using `cd`) and run the `display_project_summaries.sh` script using the `sh` command?
-- Have a look at the `finance_summary.sh` code with cat. Looks a bit scary, yeah? You could look at this some more after this session with the links in the code
+- Feeling adventurous? Have a look at the `finance_summary.sh` code with `cat`. Looks a bit scary, yeah? See if you can figure out the logic of any piece of it.
