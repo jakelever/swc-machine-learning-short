@@ -118,11 +118,6 @@ $ ls --help
 ~~~
 {: .bash}
 
-> ## The Manual
->
-> On most linux machine, there is a `man` command that gives you the manual for a command. So `man ls` gives a similar output to `ls --help`. So commands don't use `--help` and some don't have a manual page. Unfortunately git for windows doesn't support `man`. In that cause, a quick Google search for "man page" plus the name of the command will provide the relevant information.
-{: .callout}
-
 ## I want to go somewhere
 
 It's not much fun staying in the same place, so to get moving we use `cd`. It stands for "change directory". But it normally takes one argument. In this case, the extra piece is where we should move to. The easiest is the name of a directory in our current working directory. Let's try moving to the Desktop (which is normally a directory called Desktop in your home directory.
