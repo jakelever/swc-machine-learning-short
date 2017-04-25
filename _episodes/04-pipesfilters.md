@@ -123,7 +123,7 @@ Now the power of the unix shell will come into play. We had stored our results f
 
 Many of the commands that we've discussed including `sort` normally require at least file as an argument. However, if we "pipe" output from another program, we don't need to give any files as an argument.
 
-The pipe approach simply involves putting a "|" character between programs when running them. For instance, to combine `wc` and `sort` we do the following.
+The pipe approach simply involves putting a "\|" character between programs when running them. For instance, to combine `wc` and `sort` we do the following.
 
 ~~~
 $ wc -l email_summaries/received/* | sort -n
