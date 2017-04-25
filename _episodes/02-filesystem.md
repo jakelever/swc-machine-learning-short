@@ -183,8 +183,6 @@ bank_statements  contacts.txt  emails  email_summaries  README.md  research_file
 ~~~
 {: .output}
 
-Hmm, maybe that README file would tell us more about the files.
-
 ## Let's check out the research files
 
 ~~~
@@ -226,9 +224,7 @@ $ pwd
 
 ## Getting straight to the point
 
-You don't always need to do a set of `cd` commands to get to a directory, when one will do it.
-
-Instead of two `cd` commands, you could just use one.
+You don't always need to do a set of `cd` commands to get to a directory, when one will do it. 
 
 ~~~
 $ cd research_files
@@ -236,18 +232,13 @@ $ cd project_arcturus
 ~~~
 {: .bash}
 
+Instead of two `cd` commands, you could just use one.
+
 ~~~
 $ cd research_files/project_arcturus/
-$ cat summary.txt
 ~~~
 {: .bash}
 
-Or without the `cd`:
-
-~~~
-$ cat research_files/project_arcturus/summary.txt
-~~~
-{: .bash}
 
 > ## Tab-complete
 >
@@ -287,8 +278,6 @@ $ cat README.md
 
 Dr Gill was apparently working on the Gibson project at Sandford Biotechnologies. Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the gibson project? It will be in the research_files directory.
 
-Try using multiple `cd` commands and getting back to the adventure-data path. And then see if you can do the same with fewer commands, or even just one `cat` command.
-
 > ## Solution
 >
 > ~~~
@@ -303,6 +292,6 @@ Try using multiple `cd` commands and getting back to the adventure-data path. An
 {: .solution}
 
 ## Bonus Points
-
+- Can you reduce the number of commands needed to read the file? Can you use just one `cat` command?
 - Can you read the README file about the tools that are supplied?
 
