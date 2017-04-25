@@ -22,7 +22,7 @@ keypoints:
 - "Use `history` to display recent commands, and `!number` to repeat a command by number."
 ---
 
-So he has been receiving substantial money from Bishop Industries and has received many emails from Martin Bishop.
+So he has been receiving substantial money from Bishop Industries and has sent many emails to a Martin Bishop. It'd be great if we knew more about Martin Bishop.
 
 Let's find all the Martin Bishop emails
 
