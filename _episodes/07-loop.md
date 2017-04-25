@@ -3,19 +3,20 @@ title: "The Decrypted Truth"
 teaching: 15
 exercises: 0
 questions:
-- "How can I find files?"
-- "How can I find things in files?"
+- "How can I perform the same actions on many different files?"
 objectives:
-- "Use `grep` to select lines from text files that match simple patterns."
-- "Use `find` to find files whose names match simple patterns."
-- "Use the output of one command as the command-line parameters to another command."
-- "Explain what is meant by 'text' and 'binary' files, and why many common tools don't handle the latter well."
+- "Write a loop that applies one or more commands separately to each file in a set of files."
+- "Trace the values taken on by a loop variable during execution of the loop."
+- "Explain the difference between a variable's name and its value."
 keypoints:
-- "`find` finds files with specific properties that match patterns."
-- "`grep` selects lines in files that match patterns."
-- "`--help` is a flag supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs."
-- "`man command` displays the manual page for a given command."
-- "`$(command)` inserts a command's output in place."
+- "A `for` loop repeats commands once for every thing in a list."
+- "Every `for` loop needs a variable to refer to the thing it is currently operating on."
+- "Use `$name` to expand a variable (i.e., get its value). `${name}` can also be used."
+- "Do not use spaces, quotes, or wildcard characters such as '*' or '?' in filenames, as it complicates variable expansion."
+- "Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping."
+- "Use the up-arrow key to scroll up through previous commands to edit and repeat them."
+- "Use `Ctrl-R` to search through the previously entered commands."
+- "Use `history` to display recent commands, and `!number` to repeat a command by number."
 ---
 
 It's rather strange that the only email from Martin Bishop arrives on the day that Dr Gill was last seen.
