@@ -161,6 +161,7 @@ TODO: Maybe include head/tail in the reading emails exercise later?
 > $ wc -l email_summaries/received/* | sort -n
 > ~~~
 > {: .bash}
+> 
 {: .solution}
 
 
