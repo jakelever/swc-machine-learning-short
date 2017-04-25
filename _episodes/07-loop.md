@@ -23,7 +23,7 @@ It's rather strange that the only email from Martin Bishop arrives on the day th
 Let's see what it says.
 
 ~~~
-$ cat TODO
+$ cat emails/04_02_2017/RECEIVED_FROM_Martin_Bishop.08_23AM.txt
 ~~~
 {: .bash}
 
@@ -36,36 +36,42 @@ The forensic tools contain a script for decrypting emails. Unfortunately it only
 Let's see how it works.
 
 ~~~
-$ sh tools/decrypt_email.sh
+$ sh tools/decrypt.sh
 ~~~
 {: .bash}
 
 It suggests that we try it out on a test file. Let's look at the test file.
 
 ~~~
-$ cat tools/example_email.txt
+$ cat tools/encrypted_file.txt
 ~~~
 {: .bash}
+~~~
+ENCRYPTED
+PBZOBQ
+Vxv, vlr'sb abzovmqba qefp cfib. Zlkdoxqrixqflkp!
+~~~
+{: .output}
 
-Yep, definitely encrypted.
+Yep, definitely encrypted. Note, that actual encrypted files don't look like this. But isn't this fun!
+
 
 And if we try decrypting with the wrong password.
 
 ~~~
-$ sh tools/decrypt_email.sh WRONG tools/example_email.txt
+$ sh tools/decrypt.sh WRONG tools/encrypted_file.txt
 ~~~
 {: .bash}
 
 However the correct password works.
-
 ~~~
-$ sh tools/decrypt_email.sh SECRET tools/example_email.txt
+$ sh tools/decrypt.sh SECRET tools/encrypted_file.txt
 ~~~
 {: .bash}
 
 ## Variables
 
-We're going to introduce the concept of variables in the Unix Shell. These are places to store information that are useful for running commands. For instance, we could store the word "SECRET" in the variable "password". To do this, we do the following:
+We're going to introduce the concept of variables in the Unix Shell. These are placeholders to store information that are useful for running commands. For instance, we could store the word "SECRET" in the variable "password". To do this, we do the following:
 
 ~~~
 $ password=SECRET
@@ -75,13 +81,13 @@ $ password=SECRET
 When we store a value to a variable, we use the format above with an equals sign and no spaces either side (that's important). When we then want to use the variable, we put a dollar sign in front of it. For example:
 
 ~~~
-$ sh tools/decrypt_email.sh $password tools/example_email.txt
+$ sh tools/decrypt.sh $password tools/encrypted_file.txt
 ~~~
 {: .bash}
 
 > ### Lifetime of a Variable
 >
-> Variables stay within a Unix shell session. If you close it, you'll lose those variables that you've set. And if you have another unix shell open, you won't be able to access those variables in that shell.
+> Variables live within an individual Unix shell session. If you close it, you'll lose those variables that you've set. And if you have another unix shell open, you won't be able to access those variables in that shell.
 {: .callout}
 
 ## Echo
@@ -117,6 +123,13 @@ $ for animal in "cat" "dog" "fish" "elephant"
 > done
 ~~~
 {: .bash}
+~~~
+cat
+dog
+fish
+elephant
+~~~
+{: .output}
 
 ## Loops and Files
 
@@ -133,15 +146,11 @@ $ for file in email_summaries/received/*
 ## Email Decryption
 
 ~~~
-$ sh tools/decrypt_email.sh SECRET TODO
+$ sh tools/decrypt.sh SECRET emails/04_02_2017/RECEIVED_FROM_Martin_Bishop.08_23AM.txt
 ~~~
 {: .bash}
 
 Unfortunately that didn't work.
-
-
-
-
 
 ## Exercise
 
@@ -153,7 +162,7 @@ As digital forensic experts, we know that the five most common passwords are:
 4. dragon
 5. qwerty
 
-These are real common password, though not exactly the top five (source: [SplashData](http://splashdata.blogspot.ca).)
+These are real common passwords, though not exactly the top five (source: [SplashData](http://splashdata.blogspot.ca).)
 
 Can you write a loop that will try each of them to decrypt the email?
 
@@ -162,7 +171,7 @@ Can you write a loop that will try each of them to decrypt the email?
 > ~~~
 > $ for password in "123456" "password" "shadow" "dragon" "qwerty"
 > $ do
-> $ sh tools/decrypt_email.sh $password TODO
+> $ sh tools/decrypt.sh $password emails/04_02_2017/RECEIVED_FROM_Martin_Bishop.08_23AM.txt
 > $ done
 > ~~~
 > {: .bash}
