@@ -85,7 +85,7 @@ $ sh tools/decrypt.sh $password tools/encrypted_file.txt
 ~~~
 {: .bash}
 
-> ### Lifetime of a Variable
+> ## Lifetime of a Variable
 >
 > Variables live within an individual Unix shell session. If you close it, you'll lose those variables that you've set. And if you have another unix shell open, you won't be able to access those variables in that shell.
 {: .callout}
