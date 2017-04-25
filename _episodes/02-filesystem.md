@@ -173,11 +173,6 @@ $ cd adventure-data
 ~~~
 {: .bash}
 
-> ## Tab-complete
->
-> Shell users are lazy and typing out long filenames is tedious. If you've started typing a filename, you can press Tab and the shell will try to complete the rest (if there is only one possibility).
-{: .callout}
-
 Let's check what we've got.
 
 ~~~
