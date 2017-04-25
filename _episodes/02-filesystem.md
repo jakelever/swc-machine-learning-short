@@ -73,7 +73,7 @@ $ pwd
 
 The output will look different for you and depend on what type of system you are using and your own username. The first forward slash designates the root of the whole file system. We are then inside the home directory, and then inside the exampleuser directory.
 
-> ### Home directory
+> ## Home directory
 >
 > You normally start in your home directory. On Linux, this is normally /home/USERNAME, for windows it is /C/Users/USERNAME and for MacOsX it is /Users/USERNAME (where USERNAME is your username).
 {: .callout}
@@ -94,7 +94,7 @@ documents Desktop downloads thesis.pdf
 
 This gives the contents of current directory. Notice that it shows both files and directories.
 
-> ### Arguments
+> ## Arguments
 >
 > When you call a command, you can give it extra information on what it should do. These are often called arguments or parameters. This might be a signal to give the output in a different format, or to process a different file. It depends on the program.
 {: .callout}
