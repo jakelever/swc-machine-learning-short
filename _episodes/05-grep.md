@@ -80,7 +80,7 @@ Find out who Martin Bishop is using `grep` and the contacts.tsv file.
 > ## Solution
 >
 > ~~~
-> $ grep "Martin Bishop" contacts.tsv
+> $ grep "Martin Bishop" contacts.txt
 > ~~~
 > {: .bash}
 >
