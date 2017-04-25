@@ -18,66 +18,154 @@ keypoints:
 - "`$(command)` inserts a command's output in place."
 ---
 
+It's rather strange that the only email from Martin Bishop arrives on the day that Dr Gill was last seen.
+
+Let's see what it says.
+
 ~~~
-$ for email in emails/martin_bishop.*
-$ do
-$ sh tools/decrypt.sh EINSTEIN $email
-$ done
+$ cat TODO
 ~~~
 {: .bash}
 
-Last but not least, we're going to find a file mentioned in the last encrypted email.
+Oh dear, it seems to be encrypted. Luckily we have a decrypting script. But if only we had the password
 
-## Find
+## The Decrypting Script
+
+The forensic tools contain a script for decrypting emails. Unfortunately it only works for the emails in this workshop.
+
+Let's see how it works.
 
 ~~~
-$ find emails
+$ sh tools/decrypt_email.sh
 ~~~
 {: .bash}
 
+It suggests that we try it out on a test file. Let's look at the test file.
+
 ~~~
-$ find emails -f
+$ cat tools/example_email.txt
 ~~~
 {: .bash}
 
+Yep, definitely encrypted.
+
+And if we try decrypting with the wrong password.
+
 ~~~
-$ find emails -d
+$ sh tools/decrypt_email.sh WRONG tools/example_email.txt
 ~~~
 {: .bash}
 
+However the correct password works.
+
 ~~~
-$ find . -name 'README.md'
+$ sh tools/decrypt_email.sh SECRET tools/example_email.txt
 ~~~
 {: .bash}
 
+## Variables
+
+We're going to introduce the concept of variables in the Unix Shell. These are places to store information that are useful for running commands. For instance, we could store the word "SECRET" in the variable "password". To do this, we do the following:
+
 ~~~
-$ find emails -name 'martin_bishop*'
+$ password=SECRET
 ~~~
 {: .bash}
+
+When we store a value to a variable, we use the format above with an equals sign and no spaces either side (that's important). When we then want to use the variable, we put a dollar sign in front of it. For example:
+
+~~~
+$ sh tools/decrypt_email.sh $password tools/example_email.txt
+~~~
+{: .bash}
+
+> ### Lifetime of a Variable
+>
+> Variables stay within a Unix shell session. If you close it, you'll lose those variables that you've set. And if you have another unix shell open, you won't be able to access those variables in that shell.
+{: .callout}
+
+## Echo
+
+`echo` is a simple command displays its arguments to the screen.
+
+~~~
+$ echo "Hello"
+~~~
+{: .bash}
+
+We can get it to print out variable names.
+
+~~~
+$ echo $password
+~~~
+{: .bash}
+
+Variables can be used anywhere in the Unix shell. Their name will be replaced with their value (i.e. $password becomes SECRET) before the command is run.
+
+## Loops
+
+Loops allow us to run the same bit of code, but using a different value for our variable each time. Let's show this with echo.
+
+The format for a loop is below. This is called a `for` loop. The variable name in the loop is animal (but it can be anything, as long as you are consistent). And it look loop four times, once for each of the animals. It will do everything between `do` and `done` five times. 
+
+Try typing it in. Notice that after pressing Enter after the first line that the terminal '$' changes to '>'. This means that the terminal knows there is more to this command. It'll keep allowing you to enter the command until you enter `done` (or make a mistake).
+
+~~~
+$ for animal in "cat" "dog" "fish" "elephant"
+> do
+> echo $animal
+> done
+~~~
+{: .bash}
+
+## Loops and Files
+
+You can also use a loop to iterate over files using the wildcard operator.
+
+~~~
+$ for file in email_summaries/received/*
+> do
+> wc -l $file
+> done
+~~~
+{: .bash}
+
+## Email Decryption
+
+~~~
+$ sh tools/decrypt_email.sh SECRET TODO
+~~~
+{: .bash}
+
+Unfortunately that didn't work.
+
+
+
 
 
 ## Exercise
 
-The name of the file mentioned in the email was "babbage.txt". Can you find it in the "research_files" directory?
+As digital forensic experts, we know that the five most common passwords are:
 
-~~~
-$ find ./research_files -name 'babbage.txt'
-~~~
-{: .bash}
+1. 123456
+2. password
+3. shadow
+4. dragon
+5. qwerty
+
+These are real common password, though not exactly the top five (source: [SplashData](http://splashdata.blogspot.ca).)
+
+Can you write a loop that will try each of them to decrypt the email?
 
 > ## Solution
 >
-> The command `ls -R` lists the contents of directories recursively, i.e., lists
-> their sub-directories, sub-sub-directories, and so on in alphabetical order
-> at each level. The command `ls -t` lists things by time of last change, with
-> most recently changed files or directories first.
-> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
-> format to view timestamps.
+> ~~~
+> $ for password in "123456" "password" "shadow" "dragon" "qwerty"
+> $ do
+> $ sh tools/decrypt_email.sh $password TODO
+> $ done
+> ~~~
+> {: .bash}
 >
 {: .solution}
 
-## Bonus Points
-
-Use find to get bank statements from a specific date?
-
-Use find to get any emails on a specific date. Think about using the wildcard!
