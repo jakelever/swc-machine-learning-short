@@ -1,5 +1,5 @@
 ---
-title: "The Decrypted Truth"
+title: "The Decrypted Truth (Loops)"
 teaching: 15
 exercises: 0
 questions:
