@@ -20,14 +20,17 @@ if [ -f results.tsv ]; then
 	exit 1
 fi
 
-statementCount=`ls statements/statement_*.txt | wc -l`
+statementCount=`find statements/ -name '*_statement.txt' | wc -l`
 
 if [[ $statementCount -eq 0 ]]; then
 	echo "ERROR: Couldn't find any statement files"
 	exit 1
 fi
 
-cat statements/statement_*.txt |\
+cat statements/*_statement.txt |\
 awk -F '$' ' { summary[$1] += $2; } END { for (company in summary) print company"\t$ "summary[company]; } ' |\
 sort -k2,2nr -t $'$' > results.tsv
+
+echo "Summary saved to results.tsv using $statementCount statement(s) from the following account(s):"
+find statements/ -name '*_statement.txt' | grep -oP "ACCNO_[0-9]*" | sort -u
 
