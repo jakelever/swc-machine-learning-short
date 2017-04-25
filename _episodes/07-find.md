@@ -1,5 +1,5 @@
 ---
-title: "Finding Things"
+title: "Looping"
 teaching: 15
 exercises: 0
 questions:
@@ -17,6 +17,14 @@ keypoints:
 - "`man command` displays the manual page for a given command."
 - "`$(command)` inserts a command's output in place."
 ---
+
+~~~
+$ for email in emails/martin_bishop.*
+$ do
+$ sh tools/decrypt.sh EINSTEIN $email
+$ done
+~~~
+{: .bash}
 
 Last but not least, we're going to find a file mentioned in the last encrypted email.
 
