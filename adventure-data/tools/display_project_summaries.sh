@@ -1,3 +1,4 @@
+# Displays the summary of various projects
 cat research_files/project_gibson/summary.txt
 cat research_files/project_arcturus/summary.txt
 cat research_files/project_columbia/summary.txt
