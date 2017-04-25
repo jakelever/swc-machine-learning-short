@@ -69,6 +69,7 @@ if __name__ == '__main__':
 		receivedTemplates = f.read().split('~')
 
 	print "Generating contacts..."
+	martinBishopContact = ("Martin","Bishop","Bishop Industries","Chief executive officer","Wales")
 	contacts = []
 	for _ in range(200):
 		firstname,surname = (random.choice(firstnames),random.choice(surnames))
@@ -79,7 +80,9 @@ if __name__ == '__main__':
 		contacts.append(contact)
 
 	with open(args.contactsFile,'w') as outF:
-		for contact in contacts:
+		mergedContacts = [martinBishopContact] + contacts
+		mergedContacts = sorted(mergedContacts)
+		for contact in mergedContacts:
 			line = "%s %s\t%s\t%s\t%s" % (contact)
 			#print line
 			outF.write(line+"\n")
@@ -89,8 +92,14 @@ if __name__ == '__main__':
 	sentDict = defaultdict(list)
 	emailsDict = defaultdict(list)
 	for _ in range(2000):
-		sent = random.random() > 0.5
-		contact = random.choice(contacts)
+		if random.random() > 0.05:
+			sent = random.random() > 0.5
+			contact = random.choice(contacts)
+		else:
+			sent = True
+			contact = martinBishopContact
+
+
 		if sent:
 			email = random.choice(sentTemplates)
 		else:
