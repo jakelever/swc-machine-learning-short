@@ -1,5 +1,5 @@
 ---
-title: "Banking Issues"
+title: "Banking Issues (Files)"
 teaching: 15
 exercises: 0
 questions:
@@ -15,7 +15,10 @@ keypoints:
 - "`mkdir path` creates a new directory."
 - "`mv old new` moves (renames) a file or directory."
 - "`rm path` removes (deletes) a file."
+- "`*` matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`."
 - "The shell does not have a trash bin: once something is deleted, it's really gone."
+- "`head` displays the first few lines of its input."
+- "`tail` displays the last few lines of its input."
 ---
 
 ## Bank statements
@@ -270,6 +273,17 @@ $ head finance_results.txt
 {: .bash}
 
 That's better. But there's nothing obvious here.
+
+> ## Heads or Tails
+>
+> To partner of the `head` command is the `tail` command, which gives the last 10 lines of a file. Both commands can be given an extra argument so request a different number of lines. For example, to get the top 13 lines from a finance_results.txt
+> 
+> ~~~
+> $ head -n 13 finance_results.txt
+> ~~~
+> {: .bash}
+> 
+{: .callout}
 
 ## Clearing out files
 
