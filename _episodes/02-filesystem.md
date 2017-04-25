@@ -37,11 +37,9 @@ which hold information,
 and directories (also called "folders"),
 which hold files or other directories.
 
-The image below gives a summary of the filesystem that we're going to be looking at. You can see that the email folder is inside the adventure-data folder. And that the README.md file is inside the ??? folder.
+The image below gives an initial summary of the files that we're going to be looking at. You can see that the emails folder is inside the adventure-data folder. And that the README.md file is also inside the adventure-data folder.
 
-![The File System](../fig/filesystem.svg)
-
-TODO: Make a partial filesystem with question marks for places we're going to investigate. Specifically make the tools directory something we know about and the laptop contents a mystery.
+![The File System](../fig/file_hierarchy.png)
 
 ## Starting Off
 
