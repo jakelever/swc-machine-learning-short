@@ -1,5 +1,5 @@
 ---
-title: "Loopy"
+title: "Too Many Files"
 teaching: 15
 exercises: 0
 questions:
