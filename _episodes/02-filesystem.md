@@ -164,7 +164,7 @@ adventure-data
 ~~~
 {: .output}
 
-Let's keep going to the downloaded files. You should have already downloaded them to the Desktop. If you haven't already, go to the [setup page](../setup/) TODO: Check link.
+Let's keep going to the downloaded files. You should have already downloaded them to the Desktop. If you haven't already, go to the [setup page](../setup/)
 
 ~~~
 $ cd adventure-data
@@ -179,7 +179,7 @@ $ ls
 {: .bash}
 
 ~~~
-TODO: Results go here
+bank_statements  contacts.txt  emails  email_summaries  README.md  research_files  tools
 ~~~
 {: .output}
 
