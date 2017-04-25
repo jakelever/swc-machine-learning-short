@@ -110,8 +110,6 @@ Gemini
 Grus
 Hercules
 Horologium
-Hydra
-Hydrus
 Indus
 Lacerta
 Leo
