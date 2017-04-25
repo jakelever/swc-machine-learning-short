@@ -33,11 +33,11 @@ You are all **digital forensics specialists** and have been given a new high pro
 
 ### Details
 
-Dr Gill was last seen working late in his office at Sandford Biotechnologies on the evening of April 12th. His wife reported him missing the next morning when she found he hadn't returned from work. His car is missing. No activity has been found on his bank accounts since his disappearance.
+Dr Gill was last seen leaving for work on the morning of April 2nd. His wife reported him missing after he didn't come home that night.  No activity has been found on his bank accounts since his disappearance.
 
 ### Who is Richard Gill?
 
-Dr Gill is director of research at Sandford Biotechnologies. After a distinguished research career in academia, he moved into industry and has been leading the drug development team at Sandford. He was known to be working on a project codenamed GIBSON.
+Dr Gill is director of research at Sandford Biotechnologies. After a distinguished research career in academia, he moved into industry and has been leading the drug development team at Sandford. He was known to be working on a project codenamed Gibson. He often works late into the night.
 
 ### What is Sandford Biotechnologies?
 

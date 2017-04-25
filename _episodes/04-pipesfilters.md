@@ -23,7 +23,7 @@ keypoints:
 - "The best way to use the shell is to use pipes to combine simple single-purpose programs (filters)."
 ---
 
-Next we should check his emails.
+So Dr Gill was receiving suspicious amounts of money from Bishop Industries. Perhaps something in his emails with give us more clues. Let's first check the email summaries. These are files that summarize the emails that Dr Gill sent and received.
 
 ~~~
 $ ls email_summaries/
@@ -45,23 +45,31 @@ $ ls email_summaries/received
 This shows that there is a file for each contact.
 
 ~~~
-$ ls email_summaries/received/alan
+$ cat email_summaries/received/Dorothy_Haskett.txt
 ~~~
 {: .bash}
 
-Shows it is a log of when alan has contacted Dr Gill.
+~~~
+01/14/2017 03:16 PM
+01/15/2017 10:56 PM
+02/10/2017 05:54 AM
+02/10/2017 08:10 PM
+~~~
+{: .output}
+
+Each file contains the dates and times of emails sent or received by Dr Gill. Here Dorothy Haskett emailed Dr Gibbs four times.
 
 # Who's Popular?
 
 It'd be good to know who contacts Dr Gill the most. For this we will use the `wc` command. It calculates various statistics on a file, including the line count. The `wc` command takes a file (or set of files) as the arguments and prints out the statistics for each file.
 
 ~~~
-$ wc email_summaries/received/alan
+$ wc email_summaries/received/Dorothy_Haskett.txt
 ~~~
 {: .bash}
 
 ~~~
-18 18 45 email_summaries/received/alan
+ 4 12 80 email_summaries/received/Dorothy_Haskett.txt
 ~~~
 {: .output}
 
@@ -70,14 +78,16 @@ The statistics that it prints out are the number of lines, the number of words a
 We only want the line count, so use the `-l` argument.
 
 ~~~
-$ wc -l email_summaries/received/alan
+$ wc -l email_summaries/received/Dorothy_Haskett.txt
 ~~~
 {: .bash}
 
 ~~~
-18 email_summaries/received/alan
+4 email_summaries/received/Dorothy_Haskett.txt
 ~~~
 {: .output}
+
+Good, this shows that Dorothy Haskett emailed Dr Gill four times.
 
 # Saving a result
 
@@ -88,7 +98,7 @@ $ wc -l email_summaries/received/*
 ~~~
 {: .bash}
 
-Notice that `wc` includes a row for the total line numbers for all the files. This can be a useful statistic.
+That's a lot of counts. And notice that `wc` includes a row for the total line numbers for all the files. This can be a useful statistic.
 
 Let's save this result to a file so we can do some further processing on it. At the end of a command, you can use a *redirection*. Normally the shell will direct the output of a program to the terminal (so it can be displayed on the screen). A redirection tells the shell to send the output of the program somewhere else, like a file. It uses the ">" character.
 
@@ -108,14 +118,14 @@ $ sort received_counts.txt
 ~~~
 {: .bash}
 
-Well that's peculiar. It's sorted them alphabetically, not numerically. We need to give an extra argument `-n` to tell sort to sort the first thing on each line numerically.
+Well that's peculiar. The numbers aren't in the right order. It's sorted them alphabetically, not numerically. We need to give an extra argument `-n` to tell sort to sort the first thing on each line numerically.
 
 ~~~
 $ sort -n received_counts.txt
 ~~~
 {: .bash}
 
-That's great.
+Excellent, the numbers are now in order.
 
 ## Pipes
 
@@ -134,23 +144,11 @@ $ wc -l email_summaries/received/* | sort -n
 
 Can you find out who Dr Gill emailed the most? Try looking in the sent folder. First trying using an intermediate file (i.e. use `wc` and save it to a file). Then try using a pipe.
 
-~~~
-$ wc -l emails/* | sort -n
-~~~
-{: .bash}
-
-~~~
-$ wc -l emails/* | sort -n | tail -n 2 | head -n 1
-~~~
-{: .bash}
-
-TODO: Maybe include head/tail in the reading emails exercise later?
-
 > ## Solution
 >
 > With an intermediate file it would be:
 > ~~~
-> $ wc -l email_summaries/received/* > sent_counts.txt
+> $ wc -l email_summaries/sent/* > sent_counts.txt
 > $ sort -n sent_counts.txt
 > ~~~
 {: .bash}
@@ -158,7 +156,7 @@ TODO: Maybe include head/tail in the reading emails exercise later?
 > And with a pipe it would be:
 >
 > ~~~
-> $ wc -l email_summaries/received/* | sort -n
+> $ wc -l email_summaries/sent/* | sort -n
 > ~~~
 > {: .bash}
 > 

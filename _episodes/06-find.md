@@ -29,14 +29,14 @@ $ ls emails/
 ~~~
 {: .bash}
 
-Oh dear, there are a lot of directories.
+Oh dear, there are a lot of directories. The emails have been grouped by the day that they were sent or received. Let's have a look in one of them.
 
 ~~~
-$ ls emails/SOME_DIRECTORY
+$ ls emails/01_01_2017
 ~~~
 {: .bash}
 
-It would appear each email is its own file. And they are named "RECEIVED_FROM_" or "SENT_TO_" and then the person's name.
+It would appear each email is its own file. And they are named "RECEIVED_FROM_" or "SENT_TO_" and then the person's name and time.
 
 We need a tool to be able to search for a specific file.
 
@@ -58,7 +58,7 @@ It will print out every file or directory within the email_summaries directory, 
 Let's try it with the `-name` filter. We specify a pattern, using a wildcard if we want, to find files or directories that match.
 
 ~~~
-$ find email_summaries/ -name 'TODO*'
+$ find email_summaries/ -name 'Joan*'
 ~~~
 {: .bash}
 
@@ -84,6 +84,19 @@ Now let's see if we can find all the emails sent to Martin Bishop.
 $ find emails/ -name 'SENT_TO_Martin_Bishop*'
 ~~~
 {: .bash}
+
+That's a lot of emails. We could count them by piping `find` in `wc -l`
+
+~~~
+$ find emails/ -name 'SENT_TO_Martin_Bishop*' | wc -l
+~~~
+{: .bash}
+~~~
+108
+~~~
+{: .output}
+
+This says that Dr Gill emailed Martin Bishop 108 times and matches up with the email summaries file.
 
 ## Exercise
 
