@@ -54,6 +54,11 @@ $ find email_summaries/ -name 'Joan*'
 ~~~
 {: .bash}
 
+> ## The Manual
+>
+> On most linux machine, there is a `man` command that gives you the manual for a command. Some commands don't use `--help` and some don't have a manual page. Unfortunately git for windows doesn't support `man`. In that cause, a quick Google search for "man page" plus the name of the command will provide the relevant information.
+{: .callout}
+
 Another filter is `-type`. To filter for files:
 
 ~~~
