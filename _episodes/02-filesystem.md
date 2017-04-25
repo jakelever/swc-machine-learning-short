@@ -1,5 +1,5 @@
 ---
-title: "Last Words"
+title: "Last Words (Moving Around)"
 teaching: 15
 exercises: 0
 questions:
@@ -9,9 +9,6 @@ questions:
 objectives:
 - "Explain the similarities and differences between a file and a directory."
 - "Translate an absolute path into a relative path and vice versa."
-- "Construct absolute and relative paths that identify specific files and directories."
-- "Explain the steps in the shell's read-run-print cycle."
-- "Identify the actual command, flags, and filenames in a command-line call."
 - "Demonstrate the use of tab completion, and explain its advantages."
 keypoints:
 - "The file system is responsible for managing information on the disk."
@@ -20,7 +17,6 @@ keypoints:
 - "`cd path` changes the current working directory."
 - "`ls path` prints a listing of a specific file or directory; `ls` on its own lists the current working directory."
 - "`pwd` prints the user's current working directory."
-- "`whoami` shows the user's current identity."
 - "`/` on its own is the root directory of the whole file system."
 - "A relative path specifies a location starting from the current location."
 - "An absolute path specifies a location from the root of the file system."
@@ -28,6 +24,7 @@ keypoints:
 - "'..' means 'the directory above the current one'; '.' on its own means 'the current directory'."
 - "Most files' names are `something.extension`. The extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file."
 - "Most commands take options (flags) which begin with a '-'."
+- "`cat` displays the contents of its inputs."
 ---
 
 The part of the operating system responsible for managing files and directories
