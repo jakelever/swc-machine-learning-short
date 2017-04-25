@@ -132,7 +132,7 @@ $ wc -l email_summaries/received/* | sort -n
 
 ## Exercise
 
-Can you find out who Dr Gibbs emailed the most? Try looking in the sent folder. First trying using an intermediate file (i.e. use `wc` and save it to a file). Then try using a pipe.
+Can you find out who Dr Gill emailed the most? Try looking in the sent folder. First trying using an intermediate file (i.e. use `wc` and save it to a file). Then try using a pipe.
 
 ~~~
 $ wc -l emails/* | sort -n

@@ -38,8 +38,6 @@ cat bank_statements/ACCNO_00497405_statement.txt
 
 Unfortunately a quick check of one of the statement files doesn't tell us anything. We'll need to use one of our forensics tools.
 
-TODO: Make sure it's Gill and not Gibbs.
-
 ## Tools
 
 Let's see what tools we have.
