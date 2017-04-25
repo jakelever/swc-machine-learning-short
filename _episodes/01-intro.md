@@ -28,6 +28,9 @@ The unix shell is just another program. It is used to run other programs. The in
 
 You are all digitial forensics specialists and have been given a new high profile case. The acclaimed scientist, Richard Gill, has gone missing. You have been tasked with investigating his laptop contents and research files to find any clues that may explain his disappearance.
 
+![The File System](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Police_Line_Crime_Scene_2498847226.jpg/640px-Police_Line_Crime_Scene_2498847226.jpg)
+[Source](https://commons.wikimedia.org/wiki/File:Police_Line_Crime_Scene_2498847226.jpg)
+
 ### Details
 
 Dr Gill was last seen working late in his office at Sandford Biotechnologies on the evening of April 12th. His wife reported him missing the next morning when she found he hadn't returned from work. His car is missing. No activity has been found on his bank accounts since his disappearance.
