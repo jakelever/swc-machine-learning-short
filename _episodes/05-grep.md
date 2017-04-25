@@ -27,11 +27,11 @@ So he has been receiving substantial money from Bishop Industries and has sent m
 Let's find out who Martin Bishop is. We're going to look for information in Dr Gill's contact book.
 
 ~~~
-$ cat contacts.tsv
+$ cat contacts.txt
 ~~~
 {: .bash}
 
-Oh dear, it's rather large. However it does have information against everyone's name. That looks promising.
+Oh dear, it's rather large. However it does have information against everyone's name. The first column is their name, the second is their company, the third is the position at the company and the fourth is their location.
 
 # Searching within a file
 
@@ -39,17 +39,17 @@ To search within a file, we use the `grep` command. It stands for the less catch
 
 `grep` takes two arguments as standard: the search term and the file to search. It will find and print out every line in the file that contains the pattern. 
 
-Let's search the address book for his dentist. Notice that quotation marks are used around the word "Dentist" in the command.
+Let's search the address book for contacts based in Bolivia. Notice that quotation marks are used around the word "bolivia" in the command.
 
 ~~~
-$ grep "Dentist" contacts.tsv
+$ grep "bolivia" contacts.txt
 ~~~
 {: .bash}
 
 Hmm, it didn't find anything. `grep` is case-sensitive by default. To make it case-insensitive, use the `-i` argument.
 
 ~~~
-$ grep -i "Dentist" contacts.tsv
+$ grep -i "bolivia" contacts.txt
 ~~~
 {: .bash}
 
@@ -57,19 +57,19 @@ Excellent.
 
 ## The Power of Grep
 
-Grep has so many arguments. Let's just mention `-v`. It inverts the search query, so will print any line that doesn't contain the search query. For instance, the command below will print out every line that doesn't contain the letter "e".
+Grep has so many arguments. Let's just mention `-v`. It inverts the search query, so will print any line that doesn't contain the search query. For instance, the command below will print out every line that doesn't contain the letter "n".
 
 ~~~
-$ grep -v e contacts.tsv
+$ grep -v n contacts.txt
 ~~~
 {: .bash}
 
 ## Piping Grep
 
-Grep is another command that can have data piped into it. Let's try using grep twice. Can we find a contact of Dr Gill's that lives in Sunnydale and works for Vela Global.
+Grep is another command that can have data piped into it. Let's try using grep twice. Can we find a contact of Dr Gill's that lives in Belgium and works for Reducto Services.
 
 ~~~
-$ grep "Sunnyvale" contacts.tsv | grep "Vela Global"
+$ grep "Belgium" contacts.txt | grep "Reducto Services"
 ~~~
 {: .bash}
 
@@ -86,3 +86,6 @@ Find out who Martin Bishop is using `grep` and the contacts.tsv file.
 >
 {: .solution}
 
+## Bonus Points
+
+- Find the contacts entry that lives in Singapore, has an "m" in their entry but not a "u".
