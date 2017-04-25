@@ -26,7 +26,7 @@ The unix shell is just another program. It is used to run other programs. The in
 
 ## The Story Begins
 
-You are all *digitial forensics specialists* and have been given a new high profile case. The acclaimed scientist, *Richard Gill*, has gone missing. You have been tasked with investigating his laptop contents and research files to find any clues that may explain his disappearance.
+You are all **digital forensics specialists** and have been given a new high profile case. The acclaimed scientist, **Richard Gill**, has gone missing. You have been tasked with investigating his laptop contents and research files to find any clues that may explain his disappearance.
 
 ![Police Line Image](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Police_Line_Crime_Scene_2498847226.jpg/640px-Police_Line_Crime_Scene_2498847226.jpg)
 [Source](https://commons.wikimedia.org/wiki/File:Police_Line_Crime_Scene_2498847226.jpg)
