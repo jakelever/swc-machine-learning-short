@@ -1,5 +1,5 @@
 ---
-title: "Loops"
+title: "Contacts"
 teaching: 15
 exercises: 0
 questions:
