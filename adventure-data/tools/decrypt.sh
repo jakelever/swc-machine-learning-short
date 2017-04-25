@@ -6,6 +6,8 @@ function usage {
 	echo
 	echo "PASSWORD: The password used to encrypt the file"
 	echo "FILE: The file to decrypt"
+	echo
+	echo "There is a test file in the toolset. Try decrypting it. The password is SECRET."
 	exit 1
 }
 if [[ $# -ne 2 ]]; then
