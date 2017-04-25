@@ -18,36 +18,82 @@ keypoints:
 - "Letting users decide what files to process is more flexible and more consistent with built-in Unix commands."
 ---
 
-It's looping time
+This Martin Bishop character is beginning to look rather suspicious. It's time we look into the email communication between Dr Gill and Mr Bishop.
+
+# The emails directory
+
+All of Dr Gill's emails are in the emails directory.
 
 ~~~
-$ sh tools/decrypt.sh EINSTEIN emails/martin_bishop.SOMEDATA.txt
+$ ls emails/
 ~~~
 {: .bash}
 
-## Loops
+Oh dear, there are a lot of directories.
+
+~~~
+$ ls emails/SOME_DIRECTORY
+~~~
+{: .bash}
+
+It would appear each email is its own file. And they are named "RECEIVED_FROM_" or "SENT_TO_" and then the person's name.
+
+We need a tool to be able to search for a specific file.
+
+# Finding files.
+
+We've already covered finding things in a single file using `grep`. Now we cover finding files within a file system using `find`. This is another very powerful file.
+
+It takes one main argument, a directory to search, and many more arguments that define the filters use to display the files.
+
+Let's see it without a filter:
+
+~~~
+$ find email_summaries/
+~~~
+{: .bash}
+
+It will print out every file or directory within the email_summaries directory, and go into each subdirectory.
+
+Let's try it with the `-name` filter. We specify a pattern, using a wildcard if we want, to find files or directories that match.
+
+~~~
+$ find email_summaries/ -name 'TODO*'
+~~~
+{: .bash}
+
+Another filter is `-type`. To filter for files:
+
+~~~
+$ find email_summaries/ -type f
+~~~
+{: .bash}
+
+And to filter for directories:
+
+~~~
+$ find email_summaries/ -type d
+~~~
+{: .bash}
+
+## Email Time
+
+Now let's see if we can find all the emails sent to Martin Bishop.
+
+~~~
+$ find emails/ -name 'SENT_TO_Martin_Bishop*'
+~~~
+{: .bash}
 
 ## Exercise
 
-~~~
-$ for email in emails/martin_bishop.*
-$ do
-$ sh tools/decrypt.sh EINSTEIN $email
-$ done
-~~~
-{: .bash}
+Find all the email received from Martin Bishop. Is there anything suspicious about the result?
 
 > ## Solution
 >
-> The command `ls -R` lists the contents of directories recursively, i.e., lists
-> their sub-directories, sub-sub-directories, and so on in alphabetical order
-> at each level. The command `ls -t` lists things by time of last change, with
-> most recently changed files or directories first.
-> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
-> format to view timestamps.
+> ~~~
+> $ find emails/ -name 'RECEIVED_FROM_Martin_Bishop*'
+> ~~~
+> {: .bash}
 >
 {: .solution}
-
-## Bonus Points
-
-Can you decrypt any other emails using other passwords that you found?
