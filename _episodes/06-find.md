@@ -1,21 +1,13 @@
 ---
-title: "Too Many Files"
+title: "Too Many Files (find)"
 teaching: 15
 exercises: 0
 questions:
 - "How can I save and re-use commands?"
 objectives:
-- "Write a shell script that runs a command or series of commands for a fixed set of files."
-- "Run a shell script from the command line."
-- "Write a shell script that operates on a set of files defined by the user on the command line."
-- "Create pipelines that include shell scripts you, and others, have written."
+- "Use `find` to find files whose names match simple patterns."
 keypoints:
-- "Save commands in files (usually called shell scripts) for re-use."
-- "`bash filename` runs the commands saved in a file."
-- "`$@` refers to all of a shell script's command-line parameters."
-- "`$1`, `$2`, etc., refer to the first command-line parameter, the second command-line parameter, etc."
-- "Place variables in quotes if the values might have spaces in them."
-- "Letting users decide what files to process is more flexible and more consistent with built-in Unix commands."
+- "`find` finds files with specific properties that match patterns."
 ---
 
 This Martin Bishop character is beginning to look rather suspicious. It's time we look into the email communication between Dr Gill and Mr Bishop.
