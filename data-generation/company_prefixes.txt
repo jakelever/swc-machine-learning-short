@@ -172,7 +172,6 @@ Duro
 Engorgio
 Ennervate
 Episkey
-Erecto
 Expelliarmus
 Expulso
 Ferula
@@ -222,3 +221,4 @@ Stupefy
 Tarantallegra
 Tergeo
 Waddiwasi
+Carrot
