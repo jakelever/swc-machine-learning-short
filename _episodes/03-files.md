@@ -66,6 +66,7 @@ $ cat tools/display_project_summaries.sh
 {: .bash}
 
 ~~~
+# Displays the summary of various projects
 cat research_files/project_gibson/summary.txt
 cat research_files/project_arcturus/summary.txt
 cat research_files/project_columbia/summary.txt
@@ -81,6 +82,11 @@ This script is just a series of `cat` commands. Let's try running it.
 $ sh tools/display_project_summaries.sh
 ~~~
 {: .bash}
+
+> ## Comments in code
+>
+> Did you see the first line of the display_project_summaries.sh script? It started with a '#'. This signifies that this is a comment and not a command that should be run. Comments are a good idea as they help someone else (or you in six months) understand what a script does.
+{: .callout}
 
 ## Financial Summaries
 
