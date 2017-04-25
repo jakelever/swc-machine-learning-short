@@ -3,7 +3,7 @@ Tamarind Worldwide             $ 96.01
 Mango Farmers                  $ 34.48
 Liberacorpus Technologies      $ 91.73
 Longan Ltd.                    $ 11.97
-Erecto Worldwide               $ 58.44
+Carrot Worldwide               $ 58.44
 Longan Technologies            $ 29.28
 Grape Ltd.                     $ 90.14
 Dissendium Farmers             $ 21.32
@@ -64,7 +64,7 @@ Orion Ltd.                     $ 79.14
 Andromeda Incorporated         $ 41.77
 Longan Technologies            $ 40.76
 Strawberry Ltd.                $ 91.55
-Erecto Worldwide               $ 78.18
+Carrot Worldwide               $ 78.18
 Longan Technologies            $ 38.54
 Conjunctivitis Services        $ 56.89
 Liberacorpus Technologies      $ 50.19
@@ -75,7 +75,7 @@ Geminio Incorporated           $ 69.05
 Blackcurrant Worldwide         $ 22.52
 Longan Technologies            $ 85.58
 Strawberry Ltd.                $ 98.25
-Erecto Worldwide               $ 30.12
+Carrot Worldwide               $ 30.12
 Bishop Research                $ 95.65
 Sectumsempra Worldwide         $ 35.95
 Confringo and Sons             $ 98.49

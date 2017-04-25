@@ -8,7 +8,7 @@ Apus Farmers                   $ 14.30
 Densaugeo Technologies         $ 49.82
 Crucio and Sons                $ 32.25
 Legilimens Farmers             $ 15.99
-Erecto Farmers                 $ 39.18
+Carrot Farmers                 $ 39.18
 Obliviate Incorporated         $ 48.67
 Apple Services                 $ 41.12
 Conjunctivitis Services        $ 65.11
@@ -38,24 +38,24 @@ Virgo Farmers                  $ 69.65
 Deletrius and Sons             $ 70.39
 Apus Farmers                   $ 42.51
 Physalis Services              $ 56.09
-Erecto Farmers                 $ 87.71
+Carrot Farmers                 $ 87.71
 Damson Global                  $ 94.03
 Densaugeo Technologies         $ 61.38
 Virgo Farmers                  $ 25.30
 Corvus Technologies            $ 89.44
 Physalis Services              $ 54.30
 Physalis Services              $ 80.38
-Erecto Farmers                 $ 52.62
+Carrot Farmers                 $ 52.62
 Obliviate Incorporated         $ 46.09
 Pavo Farmers                   $ 99.91
 Pear Ltd.                      $ 17.13
 Pomegranate Services           $ 64.42
 Virgo Farmers                  $ 95.24
-Erecto Farmers                 $ 18.97
+Carrot Farmers                 $ 18.97
 Reparo Incorporated            $ 86.73
 Currant Services               $ 75.32
 Crucio and Sons                $ 29.30
-Erecto Farmers                 $ 18.65
+Carrot Farmers                 $ 18.65
 Pomegranate Services           $ 20.01
 Pavo Farmers                   $ 24.46
 Apple Services                 $ 85.51

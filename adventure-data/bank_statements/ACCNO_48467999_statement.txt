@@ -7,14 +7,14 @@ Corvus Ltd.                    $ 29.25
 Lyra Technologies              $ 64.64
 Tamarind and Sons              $ 13.55
 Lyra Technologies              $ 89.78
-Erecto and Sons                $ 73.00
+Carrot and Sons                $ 73.00
 Mandarine Ltd.                 $ 46.77
 Mandarine Ltd.                 $ 68.51
 Gemini Services                $ 76.93
 Sonorus and Sons               $ 63.19
 Cancer and Sons                $ 17.80
 Octans Ltd.                    $ 60.11
-Erecto and Sons                $ 93.79
+Carrot and Sons                $ 93.79
 Cancer and Sons                $ 31.55
 Orange Services                $ 69.57
 Gemini Services                $ 30.80
@@ -97,4 +97,4 @@ Guava Farmers                  $ 51.81
 Longan Worldwide               $ 88.99
 Orange Services                $ 33.03
 Nectarine Worldwide            $ 23.03
-Erecto and Sons                $ 62.19
+Carrot and Sons                $ 62.19

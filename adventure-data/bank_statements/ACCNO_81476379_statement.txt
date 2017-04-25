@@ -1,4 +1,4 @@
-Erecto Technologies            $ 44.59
+Carrot Technologies            $ 44.59
 Telescopium Ltd.               $ 23.65
 Microscopium Farmers           $ 77.19
 Grape Technologies             $ 12.70
@@ -9,7 +9,7 @@ Reducio Services               $ 98.68
 Kiwifruit Farmers              $ 17.65
 Tucana and Sons                $ 23.37
 Crux Incorporated              $ 98.67
-Erecto Technologies            $ 11.47
+Carrot Technologies            $ 11.47
 Engorgio Technologies          $ 68.84
 Boysenberry Technologies       $ 27.45
 Grape Technologies             $ 42.00
@@ -27,7 +27,7 @@ Microscopium Farmers           $ 38.37
 Persimmon Farmers              $ 12.99
 Reducio Services               $ 34.97
 Strawberry and Sons            $ 92.86
-Erecto Technologies            $ 55.31
+Carrot Technologies            $ 55.31
 Phoenix Worldwide              $ 68.45
 Silencio Technologies          $ 98.58
 Reticulum Incorporated         $ 97.50
@@ -53,7 +53,7 @@ Telescopium Ltd.               $ 86.89
 Pictor Ltd.                    $ 96.37
 Kiwifruit Farmers              $ 94.65
 Accio Technologies             $ 85.84
-Erecto Technologies            $ 77.74
+Carrot Technologies            $ 77.74
 Lacerta Technologies           $ 17.35
 Reducio Farmers                $ 43.81
 Nectarine Global               $ 61.27
