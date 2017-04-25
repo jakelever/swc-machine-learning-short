@@ -224,6 +224,56 @@ $ pwd
 > {: .bash}
 {: .callout}
 
+## Getting straight to the point
+
+You don't always need to do a set of `cd` commands to get to a directory, when one will do it.
+
+Instead of two `cd` commands, you could just use one.
+
+~~~
+$ cd research_files
+$ cd project_arcturus
+~~~
+{: .bash}
+
+~~~
+$ cd research_files/project_arcturus/
+$ cat summary.txt
+~~~
+{: .bash}
+
+Or without the `cd`:
+
+~~~
+$ cat research_files/project_arcturus/summary.txt
+~~~
+{: .bash}
+
+> ## Tab-complete
+>
+> Shell users are lazy and typing out long filenames is tedious. If you've started typing a filename, you can press Tab and the shell will try to complete the rest (if there is only one possibility).
+{: .callout}
+
+## Absolute Paths
+
+We've been navigating using **relations** paths. So far, any directory name we give to `cd` depends on where we currently are in the file system. We can also give an `absolute` path that will get you to that location wherever you start in the file system. Let's get our current working directory using `pwd`
+
+~~~
+$ pwd
+~~~
+{: .bash}
+~~~
+$ /home/exampleuser/Desktop/adventure-data/research_files
+~~~
+{: .bash}
+
+We could move back to the adventure-data directory using an absolute path (where we list all the parent directories above it). An absolute path is easy to spot as it will start with a forward slash.
+
+~~~
+$ cd /home/exampleuser/Desktop/adventure-data
+~~~
+{: .bash}
+
 ## Reading Tiny Files
 
 The `cat` command is a very basic command that displays the contents of a file. It actually stands for concatenate as you can use it to concatenate multiple files. You should only use it to display very small files which will contain unformatted text. It can't deal with things like PDFs or Word documents. Its most basic usage involves one argument: the name of the file you want to display.
@@ -235,7 +285,9 @@ $ cat README.md
 
 ## Exercise
 
-Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the gibson project? It will be in the research_files directory.
+Dr Gill was apparently working on the Gibson project at Sandford Biotechnologies. Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the gibson project? It will be in the research_files directory.
+
+Try using multiple `cd` commands and getting back to the adventure-data path. And then see if you can do the same with fewer commands, or even just one `cat` command.
 
 > ## Solution
 >
