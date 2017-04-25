@@ -1,8 +1,8 @@
-############################
-# CONFIDENTIAL INFORMATION #
-############################
+###############################################
+# PROJECT ARCTURUS - CONFIDENTIAL INFORMATION #
+###############################################
 
-Project specifics are need to know.
+This project focuses on immunotherapy.
 
 Project Lead: Dr Alexander Fleming
 

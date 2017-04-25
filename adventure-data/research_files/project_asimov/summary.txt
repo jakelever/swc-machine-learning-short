@@ -1,8 +1,8 @@
-############################
-# CONFIDENTIAL INFORMATION #
-############################
+#############################################
+# PROJECT ASIMOV - CONFIDENTIAL INFORMATION #
+#############################################
 
-Project specifics are need to know.
+This project focuses on use of artificial intelligence for drug development
 
-Project Lead: Dr Alexander Fleming
+Project Lead: Dr Arnold Lister
 

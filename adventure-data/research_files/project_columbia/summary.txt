@@ -1,8 +1,8 @@
-############################
-# CONFIDENTIAL INFORMATION #
-############################
+###############################################
+# PROJECT COLUMBIA - CONFIDENTIAL INFORMATION #
+###############################################
 
-Project specifics are need to know.
+This project focuses on drug delivery systems.
 
-Project Lead: Dr Alexander Fleming
+Project Lead: Dr Holly Burn
 

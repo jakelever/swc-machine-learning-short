@@ -1,8 +1,8 @@
-############################
-# CONFIDENTIAL INFORMATION #
-############################
+############################################
+# PROJECT TITAN - CONFIDENTIAL INFORMATION #
+############################################
 
-Project specifics are need to know.
+This project focuses on gene therapies.
 
-Project Lead: Dr Alexander Fleming
+Project Lead: Dr Jim Maxwell
 

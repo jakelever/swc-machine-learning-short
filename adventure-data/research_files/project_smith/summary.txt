@@ -1,8 +1,8 @@
-############################
-# CONFIDENTIAL INFORMATION #
-############################
+############################################
+# PROJECT SMITH - CONFIDENTIAL INFORMATION #
+############################################
 
-Project specifics are need to know.
+This project focuses on fruit-based therapies
 
-Project Lead: Dr Alexander Fleming
+Project Lead: Dr Ian Brooks
 
