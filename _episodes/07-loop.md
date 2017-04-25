@@ -1,7 +1,7 @@
 ---
 title: "The Decrypted Truth (Loops)"
 teaching: 15
-exercises: 0
+exercises: 1
 questions:
 - "How can I perform the same actions on many different files?"
 objectives:
