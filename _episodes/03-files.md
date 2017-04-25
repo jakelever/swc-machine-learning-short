@@ -15,9 +15,7 @@ keypoints:
 - "`mkdir path` creates a new directory."
 - "`mv old new` moves (renames) a file or directory."
 - "`rm path` removes (deletes) a file."
-- "Use of the Control key may be described in many ways, including `Ctrl-X`, `Control-X`, and `^X`."
 - "The shell does not have a trash bin: once something is deleted, it's really gone."
-- "Nano is a very simple text editor: please use something else for real work."
 ---
 
 ## Bank statements
@@ -191,6 +189,11 @@ First we're going to delete the statements from tmp_statements. We're going to u
 $ rm tmp_statements/ACCNO_00497405_statement.txt
 ~~~
 {: .bash}
+
+> ## Care Required
+>
+> If `rm` deletes a file, there is no way to recover it. The unix shell does not have the equivalent of the recycle bin. So be careful!
+{: .callout}
 
 An `ls` of the tmp_statements directory shows an empty directory.
 
