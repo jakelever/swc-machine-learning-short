@@ -12,7 +12,9 @@ and automate repetitive tasks
 so they aren't typing the same things over and over again.
 Use of the shell is fundamental to using a wide range of other powerful tools 
 and computing resources (including "high-performance computing" supercomputers).
-These lessons will start you on a path towards using these resources effectively.
+
+
+You are going to learn to use these tools and solve a crime at the same time!
 
 > ## Prerequisites
 >

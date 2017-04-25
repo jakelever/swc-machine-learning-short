@@ -26,53 +26,113 @@ keypoints:
 Next we should check his emails.
 
 ~~~
-$ ls emails/
+$ ls email_summaries/
 ~~~
 {: .bash}
 
 ~~~
-$ cat emails_summary/sent/jason.txt
+received  sent
+~~~
+{: .output}
+
+The email summaries are split up into received and sent.
+
+~~~
+$ ls email_summaries/received
 ~~~
 {: .bash}
 
-## Number of lines in a file
+This shows that there is a file for each contact.
 
 ~~~
-$ wc -l emails/jason.summary.txt
+$ ls email_summaries/received/alan
+~~~
+{: .bash}
+
+Shows it is a log of when alan has contacted Dr Gill.
+
+# Who's Popular?
+
+It'd be good to know who contacts Dr Gill the most. For this we will use the `wc` command. It calculates various statistics on a file, including the line count. The `wc` command takes a file (or set of files) as the arguments and prints out the statistics for each file.
+
+~~~
+$ wc email_summaries/received/alan
 ~~~
 {: .bash}
 
 ~~~
-$ wc -l emails/*
+18 18 45 email_summaries/received/alan
+~~~
+{: .output}
+
+The statistics that it prints out are the number of lines, the number of words and the total byte count for each file.
+
+We only want the line count, so use the `-l` argument.
+
+~~~
+$ wc -l email_summaries/received/alan
 ~~~
 {: .bash}
 
-## TODO: Introduce saving to file
-
-
 ~~~
-$ wc -l emails/* > email_counts.txt
+18 email_summaries/received/alan
 ~~~
-{: .bash}
+{: .output}
 
-~~~
-$ sort email_counts
-~~~
-{: .bash}
+# Saving a result
 
-That doesn't work!
+We can use the wildcard again to process multiple files.
 
 ~~~
-$ sort -n email_counts
+$ wc -l email_summaries/received/*
 ~~~
 {: .bash}
 
+Notice that `wc` includes a row for the total line numbers for all the files. This can be a useful statistic.
 
+Let's save this result to a file so we can do some further processing on it. At the end of a command, you can use a *redirection*. Normally the shell will direct the output of a program to the terminal (so it can be displayed on the screen). A redirection tells the shell to send the output of the program somewhere else, like a file. It uses the ">" character.
 
-## TODO: Introduce pipes
+~~~
+$ wc -l email_summaries/received/* > received_counts.txt
+~~~
+{: .bash}
 
+There is also the ">>" redirection. It will save any new output to the end of the file. ">" will wipe the file first, before adding new output. So if you use ">", be sure you don't need the contents of the file that is about to be overwritten.
+
+## Sorting things out
+
+We want to sort the emails to see who has contacted Dr Gill the most. We can use the `sort` command. It takes one argument, a filename of a file to be sorted.Let's try it.
+
+~~~
+$ sort received_counts.txt
+~~~
+{: .bash}
+
+Well that's peculiar. It's sorted them alphabetically, not numerically. We need to give an extra argument `-n` to tell sort to sort the first thing on each line numerically.
+
+~~~
+$ sort -n received_counts.txt
+~~~
+{: .bash}
+
+That's great.
+
+## Pipes
+
+Now the power of the unix shell will come into play. We had stored our results from the `wc` command in an intermediate file before running `sort`. The unix shell has a concept known as a pipe that allows you to take the output from one command and feed into another.
+
+Many of the commands that we've discussed including `sort` normally require at least file as an argument. However, if we "pipe" output from another program, we don't need to give any files as an argument.
+
+The pipe approach simply involves putting a "\|" character between programs when running them. For instance, to combine `wc` and `sort` we do the following.
+
+~~~
+$ wc -l email_summaries/received/* | sort -n
+~~~
+{: .bash}
 
 ## Exercise
+
+Can you find out who Dr Gibbs emailed the most? Try looking in the sent folder. First trying using an intermediate file (i.e. use `wc` and save it to a file). Then try using a pipe.
 
 ~~~
 $ wc -l emails/* | sort -n
@@ -88,13 +148,20 @@ TODO: Maybe include head/tail in the reading emails exercise later?
 
 > ## Solution
 >
-> The command `ls -R` lists the contents of directories recursively, i.e., lists
-> their sub-directories, sub-sub-directories, and so on in alphabetical order
-> at each level. The command `ls -t` lists things by time of last change, with
-> most recently changed files or directories first.
-> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
-> format to view timestamps.
+> With an intermediate file it would be:
+> ~~~
+> $ wc -l email_summaries/received/* > sent_counts.txt
+> $ sort -n sent_counts.txt
+> ~~~
+{: .bash}
 >
+> And with a pipe it would be:
+>
+> ~~~
+> $ wc -l email_summaries/received/* | sort -n
+> ~~~
+> {: .bash}
+> 
 {: .solution}
 
 

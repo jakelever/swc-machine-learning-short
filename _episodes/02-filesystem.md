@@ -37,16 +37,15 @@ which hold information,
 and directories (also called "folders"),
 which hold files or other directories.
 
-The image below gives a summary of the filesystem that we're going to be looking at. You can see that the ??? folder is inside the ??? folder. And that the README.md file is inside the ??? folder.
+The image below gives a summary of the filesystem that we're going to be looking at. You can see that the email folder is inside the adventure-data folder. And that the README.md file is inside the ??? folder.
 
 ![The File System](../fig/filesystem.svg)
+
 TODO: Make a partial filesystem with question marks for places we're going to investigate. Specifically make the tools directory something we know about and the laptop contents a mystery.
 
 ## Starting Off
 
-Several commands are frequently used to create, inspect, rename, and delete files and directories.
-To start exploring them,
-let's open a shell window:
+Several commands are frequently used to create, inspect, rename, and delete files and directories. To start exploring them, let's open a shell window:
 
 ~~~
 $
@@ -60,7 +59,9 @@ do not type the prompt, only the commands that follow it.
 
 ## Where am I?
 
-Using a graphical user interface (GUI), you use double-click a folder and it shows the contents of that folder in a window (known as Explorer in Windows and Finder on Macs). First we want to know where in the filesystem we are. For that we use the `pwd` command. It stands for "print working directory". The working directory is the name used for the directory that we are currently in. All commands that we run will be based in this directory (unless we specify otherwise).
+Windows and MacOS uses a graphical user interface (GUI) to let you interact with files. You can click on folders to move around the file system and see everything presented as icons. With the shell, everything is presented as text and the way to interact is by typing commands.
+
+First we want to know where in the filesystem we are. For that we use the `pwd` command. It stands for "print working directory". The working directory is the name used for the directory that we are currently in. All commands that we run will be based in this directory (unless we specify otherwise).
 
 ~~~
 $ pwd
@@ -72,7 +73,12 @@ $ pwd
 ~~~
 {: .output}
 
-TODO: Mention home directory.
+The output will look different for you and depend on what type of system you are using and your own username. The first forward slash designates the root of the whole file system. We are then inside the home directory, and then inside the exampleuser directory.
+
+> ### Home directory
+>
+> You normally start in your home directory. On Linux, this is normally /home/USERNAME, for windows it is /C/Users/USERNAME and for MacOsX it is /Users/USERNAME (where USERNAME is your username).
+{: .callout}
 
 ## What is here?
 
@@ -84,13 +90,18 @@ $ ls
 {: .bash}
 
 ~~~
-TODO: Results go here
+documents Desktop downloads thesis.pdf
 ~~~
 {: .output}
 
-This gives the contents of current directory.
+This gives the contents of current directory. Notice that it shows both files and directories.
 
-TODO: Talk about flags here or later?
+> ### Arguments
+>
+> When you call a command, you can give it extra information on what it should do. These are often called arguments or parameters. This might be a signal to give the output in a different format, or to process a different file. It depends on the program.
+{: .callout}
+
+A useful argument for `ls` is to get more details using `-l`. Try it out. Now each file/directory is on each line with extra information.
 
 ~~~
 $ ls -l
@@ -98,13 +109,28 @@ $ ls -l
 {: .bash}
 
 ~~~
-TODO: Results go here
+drwxr-sr-x  2 exampleuser users 4096 Apr 23 15:39 documents
+drwxr-sr-x  2 exampleuser users 4096 Apr 23 15:39 Desktop
+drwxr-sr-x  2 exampleuser users 4096 Apr 23 15:39 downloads
+-rw-r--r--  1 exampleuser users  210 Apr 23 15:39 thesis.pdf
 ~~~
 {: .output}
 
+The `ls` command has a lot of possible arguments. Many commands will give you more information using the `--help` argument. Give it a try with ls.
+
+~~~
+$ ls --help
+~~~
+{: .bash}
+
+> ## The Manual
+>
+> On most linux machine, there is a `man` command that gives you the manual for a command. So `man ls` gives a similar output to `ls --help`. So commands don't use `--help` and some don't have a manual page. Unfortunately git for windows doesn't support `man`. In that cause, a quick Google search for "man page" plus the name of the command will provide the relevant information.
+{: .callout}
+
 ## I want to go somewhere
 
-It's not much fun staying in the same place, so to get moving we use `cd`. It stands for "change directory". But it normally takes one "argument". An argument is an extra piece of information about what the command should do. In this case, the extra piece is where we should move to. The easiest is the name of a directory in our current working directory. Let's try moving to the Desktop (which is normally a directory called Desktop in your home directory.
+It's not much fun staying in the same place, so to get moving we use `cd`. It stands for "change directory". But it normally takes one argument. In this case, the extra piece is where we should move to. The easiest is the name of a directory in our current working directory. Let's try moving to the Desktop (which is normally a directory called Desktop in your home directory.
 
 ~~~
 $ cd Desktop
@@ -124,23 +150,28 @@ $ pwd
 {: .output}
 
 
-> ### Up and Down arrows
+> ## Up and Down arrows
 >
-> TODO: Up and Down arrows
+> You don't have to retype every command every time. Try using the up and down arrows on the keyboard to cycle through previous commands.
 {: .callout}
 
-TODO: Maybe an ls here?
-Let's keep going to the downloaded files (TODO: add a link with extra instructions).
 
 ~~~
-$ cd data-shell
+$ ls
 ~~~
 {: .bash}
 
-> ### Tab-complete
->
-> TODO: Example tab complete
-{: .callout}
+~~~
+adventure-data
+~~~
+{: .output}
+
+Let's keep going to the downloaded files. You should have already downloaded them to the Desktop. If you haven't already, go to the [setup page](../setup/) TODO: Check link.
+
+~~~
+$ cd adventure-data
+~~~
+{: .bash}
 
 Let's check what we've got.
 
@@ -156,7 +187,46 @@ TODO: Results go here
 
 Hmm, maybe that README file would tell us more about the files.
 
-## Example Challenge
+## Let's check out the research files
+
+~~~
+$ cd research_files
+$ ls
+~~~
+{: .bash}
+
+~~~
+project_arcturus  project_columbia  project_smith
+project_asimov    project_gibson    project_titan
+~~~
+{: .output}
+
+## Going back
+
+If you go into the `research_files` directory but want to go back out, you can use the `cd ..` command. `.` and `..` are special cases in the shell. `.` means here and `..` means up one.
+
+~~~
+$ pwd
+$ cd ..
+$ pwd
+~~~
+{: .bash}
+~~~
+/home/exampleuser/Desktop/adventure-data/research_files
+/home/exampleuser/Desktop/adventure-data
+~~~
+{: .output}
+
+> ## ls can take a directory as an argument
+>
+> Instead of using a combination of `cd` and `ls` to see the contents of a directory, you can give the name of the directory to `ls` and it will list the contents. But remember, `ls` won't change the current working directory. If you want to move into that directory, you'll still need to use `cd`.
+> ~~~
+> $ ls research_files
+> ~~~
+> {: .bash}
+{: .callout}
+
+## Reading Tiny Files
 
 The `cat` command is a very basic command that displays the contents of a file. It actually stands for concatenate as you can use it to concatenate multiple files. You should only use it to display very small files which will contain unformatted text. It can't deal with things like PDFs or Word documents. Its most basic usage involves one argument: the name of the file you want to display.
 
@@ -166,17 +236,23 @@ $ cat README.md
 {: .bash}
 
 ## Exercise
-Can you read the email that was received on day that JOEBLOGGS disappeared?
+
+Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the gibson project? It will be in the research_files directory.
 
 > ## Solution
 >
-> The command `ls -R` lists the contents of directories recursively, i.e., lists
-> their sub-directories, sub-sub-directories, and so on in alphabetical order
-> at each level. The command `ls -t` lists things by time of last change, with
-> most recently changed files or directories first.
-> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
-> format to view timestamps.
+> ~~~
+> $ cd research_files
+> $ ls
+> $ cd project_gibson
+> $ ls
+> $ cat summary.txt
+> ~~~
+> {: .bash}
 >
 {: .solution}
 
+## Bonus Points
+
+- Can you read the README file about the tools that are supplied?
 
