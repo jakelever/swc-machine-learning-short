@@ -24,43 +24,65 @@ keypoints:
 
 So he has been receiving substantial money from Bishop Industries and has sent many emails to a Martin Bishop. It'd be great if we knew more about Martin Bishop.
 
-Let's find all the Martin Bishop emails
+Let's find out who Martin Bishop is. We're going to look for information in Dr Gill's contact book.
 
 ~~~
-$ ls emails/martin_bishop.*
-~~~
-{: .bash}
-
-And let's read one.
-
-~~~
-$ cat emails/martin_bishop.SOMEDATA.txt
+$ cat contacts.tsv
 ~~~
 {: .bash}
 
-Oh no! It looks like it has been encrypted.
+Oh dear, it's rather large. However it does have information against everyone's name. That looks promising.
 
-I wonder if he used a similar password for everything.
+# Searching within a file
 
-## grep
+To search within a file, we use the `grep` command. It stands for the less catchy: "global regular expression print". It is however one of the most invaluable tools in the Unix shell.
 
-TODO: Introduce grep
+`grep` takes two arguments as standard: the search term and the file to search. It will find and print out every line in the file that contains the pattern. 
+
+Let's search the address book for his dentist. Notice that quotation marks are used around the word "Dentist" in the command.
+
+~~~
+$ grep "Dentist" contacts.tsv
+~~~
+{: .bash}
+
+Hmm, it didn't find anything. `grep` is case-sensitive by default. To make it case-insensitive, use the `-i` argument.
+
+~~~
+$ grep -i "Dentist" contacts.tsv
+~~~
+{: .bash}
+
+Excellent.
+
+## The Power of Grep
+
+Grep has so many arguments. Let's just mention `-v`. It inverts the search query, so will print any line that doesn't contain the search query. For instance, the command below will print out every line that doesn't contain the letter "e".
+
+~~~
+$ grep -v e contacts.tsv
+~~~
+{: .bash}
+
+## Piping Grep
+
+Grep is another command that can have data piped into it. Let's try using grep twice. Can we find a contact of Dr Gill's that lives in Sunnydale and works for Vela Global.
+
+~~~
+$ grep "Sunnyvale" contacts.tsv | grep "Vela Global"
+~~~
+{: .bash}
 
 ## Exercise
 
-~~~
-$ grep password emails/*
-~~~
-{: .bash}
+Find out who Martin Bishop is using `grep` and the contacts.tsv file.
 
 > ## Solution
 >
-> The command `ls -R` lists the contents of directories recursively, i.e., lists
-> their sub-directories, sub-sub-directories, and so on in alphabetical order
-> at each level. The command `ls -t` lists things by time of last change, with
-> most recently changed files or directories first.
-> In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
-> format to view timestamps.
+> ~~~
+> $ grep "Martin Bishop" contacts.tsv
+> ~~~
+> {: .bash}
 >
 {: .solution}
 
