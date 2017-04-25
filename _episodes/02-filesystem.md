@@ -73,7 +73,7 @@ $ pwd
 
 The output will look different for you and depend on what type of system you are using and your own username. The first forward slash designates the root of the whole file system. We are then inside the home directory, and then inside the exampleuser directory.
 
-> ### Home directory
+> ## Home directory
 >
 > You normally start in your home directory. On Linux, this is normally /home/USERNAME, for windows it is /C/Users/USERNAME and for MacOsX it is /Users/USERNAME (where USERNAME is your username).
 {: .callout}
@@ -94,7 +94,7 @@ documents Desktop downloads thesis.pdf
 
 This gives the contents of current directory. Notice that it shows both files and directories.
 
-> ### Arguments
+> ## Arguments
 >
 > When you call a command, you can give it extra information on what it should do. These are often called arguments or parameters. This might be a signal to give the output in a different format, or to process a different file. It depends on the program.
 {: .callout}
@@ -164,7 +164,7 @@ adventure-data
 ~~~
 {: .output}
 
-Let's keep going to the downloaded files. You should have already downloaded them to the Desktop. If you haven't already, go to the [setup page](../setup/) TODO: Check link.
+Let's keep going to the downloaded files. You should have already downloaded them to the Desktop. If you haven't already, go to the [setup page](../setup/)
 
 ~~~
 $ cd adventure-data
@@ -179,11 +179,9 @@ $ ls
 {: .bash}
 
 ~~~
-TODO: Results go here
+bank_statements  contacts.txt  emails  email_summaries  README.md  research_files  tools
 ~~~
 {: .output}
-
-Hmm, maybe that README file would tell us more about the files.
 
 ## Let's check out the research files
 
@@ -224,6 +222,49 @@ $ pwd
 > {: .bash}
 {: .callout}
 
+## Getting straight to the point
+
+You don't always need to do a set of `cd` commands to get to a directory, when one will do it. 
+
+~~~
+$ cd research_files
+$ cd project_arcturus
+~~~
+{: .bash}
+
+Instead of two `cd` commands, you could just use one.
+
+~~~
+$ cd research_files/project_arcturus/
+~~~
+{: .bash}
+
+
+> ## Tab-complete
+>
+> Shell users are lazy and typing out long filenames is tedious. If you've started typing a filename, you can press Tab and the shell will try to complete the rest (if there is only one possibility).
+{: .callout}
+
+## Absolute Paths
+
+We've been navigating using **relations** paths. So far, any directory name we give to `cd` depends on where we currently are in the file system. We can also give an `absolute` path that will get you to that location wherever you start in the file system. Let's get our current working directory using `pwd`
+
+~~~
+$ pwd
+~~~
+{: .bash}
+~~~
+$ /home/exampleuser/Desktop/adventure-data/research_files
+~~~
+{: .bash}
+
+We could move back to the adventure-data directory using an absolute path (where we list all the parent directories above it). An absolute path is easy to spot as it will start with a forward slash.
+
+~~~
+$ cd /home/exampleuser/Desktop/adventure-data
+~~~
+{: .bash}
+
 ## Reading Tiny Files
 
 The `cat` command is a very basic command that displays the contents of a file. It actually stands for concatenate as you can use it to concatenate multiple files. You should only use it to display very small files which will contain unformatted text. It can't deal with things like PDFs or Word documents. Its most basic usage involves one argument: the name of the file you want to display.
@@ -235,7 +276,7 @@ $ cat README.md
 
 ## Exercise
 
-Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the gibson project? It will be in the research_files directory.
+Dr Gill was apparently working on the Gibson project at Sandford Biotechnologies. Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the gibson project? It will be in the research_files directory.
 
 > ## Solution
 >
@@ -251,6 +292,6 @@ Using `cd`, `pwd`, `ls` and `cat`, can you read the summary for the gibson proje
 {: .solution}
 
 ## Bonus Points
-
+- Can you reduce the number of commands needed to read the file? Can you use just one `cat` command?
 - Can you read the README file about the tools that are supplied?
 
