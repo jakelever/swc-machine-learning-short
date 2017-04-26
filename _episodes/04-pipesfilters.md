@@ -145,7 +145,7 @@ Can you find out who Dr Gill emailed the most? Try looking in the sent folder. F
 > $ wc -l email_summaries/sent/* > sent_counts.txt
 > $ sort -n sent_counts.txt
 > ~~~
-{: .bash}
+> {: .bash}
 >
 > And with a pipe it would be:
 >
