@@ -41,5 +41,5 @@ sort -k2,2nr -t $'$' > finance_results.txt
 
 # Finally gie the user some information about what has been processed
 echo "Summary saved to finance_results.txt using $statementCount statement(s) from the following account(s):"
-find tmp_statements/ -name '*_statement.txt' | grep -oP "ACCNO_[0-9]*" | sort -u
+find tmp_statements/ -name '*_statement.txt' | grep -oE "ACCNO_[0-9]*" | sort -u
 
