@@ -64,7 +64,7 @@ $ grep "Belgium" contacts.txt | grep "Reducto Services"
 
 ## Exercise
 
-Find out who Martin Bishop is using `grep` and the contacts.tsv file.
+Find out who Martin Bishop is using `grep` and the contacts.txt file.
 
 > ## Solution
 >
