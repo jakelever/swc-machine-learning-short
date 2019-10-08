@@ -7,7 +7,7 @@ questions:
 - "How I decide which metric to use?"
 objectives:
 - "Understand what a confusion matrix is"
-- "Learn about the different metrics 
+- "Learn about the different metrics "
 keypoints:
 - "A confusion matrix shows the counts of the true positives, false positives, true negatives and false negatives that the classifier gives."
 - "TODO"
