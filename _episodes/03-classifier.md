@@ -17,6 +17,7 @@ What is classification?
 
 Use the sklearn awesome graphic.
 
+Maybe, code my own classifier from scratch (i.e. just a rule with an if statement)
 
 We'll start with a logistic regression. Regression basically means line-fitting. And in this case, the line is going 
 
