@@ -4,15 +4,5 @@ title: Setup
 permalink: /setup/
 ---
 
-You need to download some files to follow this lesson:
+You need to make sure that you have a Google account (or use your Stanford account) to log into [Google Colab](https://colab.research.google.com).
 
-1. Download [adventure-data.zip]({{ page.root }}/data/adventure-data.zip) and move the file to your Desktop.
-2. Unzip/extract the file (ask your instructor if you need help with this step). You should end up with a new folder called data-shell on your Desktop.
-3. Open a terminal and type:
-
-~~~
-$ cd
-~~~
-{: .bash}
-
-In the lesson, you will find out how to access the data in this folder.  
