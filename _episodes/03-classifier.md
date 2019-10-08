@@ -3,18 +3,34 @@ title: "Classification"
 teaching: 15
 exercises: 0
 questions:
-- "How can I create, copy, and delete files and directories?"
+- "How do you train a classifier?"
 objectives:
-- "Create a directory hierarchy that matches a given diagram."
+- "Understand that there are many different classifier methods."
+- "Train a classifier on our dataset"
 keypoints:
-- "`cp old new` copies a file."
+- "TODO"
 ---
 
 ## Classification
 
+What is classification?
+
+Use the sklearn awesome graphic.
+
+
+We'll start with a logistic regression. Regression basically means line-fitting. And in this case, the line is going 
+
+
+### Fitting to a single variable
 ~~~
-import sklean
+import sklearn
 
 do something
 ~~~
 {: .language-python}
+
+Let's plot that! (can we?)
+
+### Fitting to everything
+
+But does make things any better? To the next chapter
