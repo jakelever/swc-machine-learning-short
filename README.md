@@ -1,8 +1,8 @@
 shell-novice
 ============
 
-An introduction to the Unix shell for people who have never used the command line before using an adventure concept.
-Please see <https://jakelever.github.io/shell-novice-adventure> for a rendered version of this material,
+An introduction to the machine learning concepts using Python 3 and [scikit-learn](https://scikit-learn.org).
+Please see <https://jakelever.github.io/swc-machine-learning-short> for a rendered version of this material,
 [the lesson template documentation][lesson-example]
 for instructions on formatting, building, and submitting material,
 or run `make` in this directory for a list of helpful commands.
