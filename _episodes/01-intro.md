@@ -18,7 +18,7 @@ keypoints:
 
 ### What is machine learning?
 
-Machine learning covers many different methods:
+Machine learning is broadly **finding patterns in data to achieve some goal**.
 
 ### Machine learning versus statistics
 
