@@ -1,8 +1,0 @@
-###############################################
-# PROJECT COLUMBIA - CONFIDENTIAL INFORMATION #
-###############################################
-
-This project focuses on drug delivery systems.
-
-Project Lead: Dr Holly Burn
-

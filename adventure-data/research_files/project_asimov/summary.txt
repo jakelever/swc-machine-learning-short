@@ -1,8 +1,0 @@
-#############################################
-# PROJECT ASIMOV - CONFIDENTIAL INFORMATION #
-#############################################
-
-This project focuses on use of artificial intelligence for drug development
-
-Project Lead: Dr Arnold Lister
-

@@ -1,8 +1,0 @@
-############################################
-# PROJECT TITAN - CONFIDENTIAL INFORMATION #
-############################################
-
-This project focuses on gene therapies.
-
-Project Lead: Dr Jim Maxwell
-

@@ -1,8 +1,0 @@
-############################################
-# PROJECT SMITH - CONFIDENTIAL INFORMATION #
-############################################
-
-This project focuses on fruit-based therapies
-
-Project Lead: Dr Ian Brooks
-
