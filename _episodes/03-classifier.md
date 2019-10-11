@@ -13,9 +13,9 @@ keypoints:
 
 ### Classification
 
-Classification is the task of TODO.
+Classification works with data that has labels, e.g. cat picture versus not cat picture, or healthy patient versus sick patient. It tries to learn which distinguishes these groups and make predictions of which group new data should be in.
 
-The figure below from the great scikit-learn documentation shows many different methods to it. The task is to try to distinguish between the red and blue data samples in the left boxes. The red and blue could represent diabetic and non-diabetic patients. The X and Y axes are different features, so could represent two clinical features like age and BMI. Different methods find different boundaries to draw around the points to differentiate them. Any new data points would then be classified using these boundaries and different methods could give very different classifications.
+The figure below from the great scikit-learn documentation shows many different methods to it. The task is to try to distinguish between the red and blue data samples in the left boxes. The red and blue could represent healthy and sick patients. The X and Y axes are different features, so could represent two clinical features. Different methods find different boundaries to draw around the points to differentiate them. Any new data points would then be classified using these boundaries and different methods could give very different classifications.
 
 ![Different scikit-learn classifiers](https://scikit-learn.org/0.15/_images/plot_classifier_comparison_0011.png)
 
