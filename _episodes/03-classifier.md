@@ -61,7 +61,7 @@ Take some time and try different rules (e.g. change the IF statement in the pred
 >     pred_train.append(True)
 >   else:
 >     pred_train.append(False)
-    
+>    
 > matching = 0
 > for i in range(N_train):
 >   if pred_train[i] == target_train[i]:
@@ -188,4 +188,3 @@ As an exercise, let's explore the documentation of scikit-learn and choose anoth
 > {: .language-python}
 >
 {: .solution}
-EXERCISE: Pick another classifier and try it

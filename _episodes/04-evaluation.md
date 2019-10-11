@@ -4,13 +4,13 @@ teaching: 15
 exercises: 0
 questions:
 - "How can I tell if my classifier is good?"
-- "How I decide which metric to use?"
 objectives:
 - "Understand what a confusion matrix is"
 - "Learn about the different metrics "
 keypoints:
 - "A confusion matrix shows the counts of the true positives, false positives, true negatives and false negatives that the classifier gives."
-- "TODO"
+- "Various statistics can be calculate from these four numbers. The statistic to use depends on what errors you want to minimize."
+- "Further reading: [Points of Significance: Classification Evaluation](https://www.nature.com/articles/nmeth.3945)"
 ---
 
 Below is a refresher of the code we've been using to classify the data.

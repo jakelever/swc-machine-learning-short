@@ -100,4 +100,4 @@ import numpy
 ~~~
 {: .language-python}
 
-TODO: Decide on how to import sklearn for lesson.
+For scikit-learn, we are going to do a from/import to select just the bits of scikit-learn that we need. The from/import code will be provided throughout this lesson.
