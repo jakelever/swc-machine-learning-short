@@ -106,4 +106,62 @@ print(f1_score(target_test,pred_test))
 
 
 
-Further reading!
+
+
+
+> ## Generate Composite Statistics
+>
+> Use each of the files once to generate a dataset containing values averaged over all patients:
+>
+> ~~~
+> filenames = glob.glob('inflammation*.csv')
+> composite_data = numpy.zeros((60,40))
+> for f in filenames:
+>     # sum each new file's data into composite_data as it's read
+>     #
+> # and then divide the composite_data by number of samples
+> composite_data /= len(filenames)
+> ~~~
+> {: .language-python}
+>
+> Then use pyplot to generate average, max, and min for all patients.
+>
+> > ## Solution
+> > ~~~
+> > import glob
+> > import numpy
+> > import matplotlib.pyplot
+> >
+> > filenames = glob.glob('inflammation*.csv')
+> > composite_data = numpy.zeros((60,40))
+> >
+> > for f in filenames:
+> >     data = numpy.loadtxt(fname = f, delimiter=',')
+> >     composite_data += data
+> >
+> > composite_data/=len(filenames)
+> >
+> > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+> >
+> > axes1 = fig.add_subplot(1, 3, 1)
+> > axes2 = fig.add_subplot(1, 3, 2)
+> > axes3 = fig.add_subplot(1, 3, 3)
+> >
+> > axes1.set_ylabel('average')
+> > axes1.plot(numpy.mean(composite_data, axis=0))
+> >
+> > axes2.set_ylabel('max')
+> > axes2.plot(numpy.max(composite_data, axis=0))
+> >
+> > axes3.set_ylabel('min')
+> > axes3.plot(numpy.min(composite_data, axis=0))
+> >
+> > fig.tight_layout()
+> >
+> > matplotlib.pyplot.show()
+> > ~~~
+> > {: .language-python}
+>{: .solution}
+{: .challenge}
+
+
