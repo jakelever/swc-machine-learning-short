@@ -114,6 +114,17 @@ print(features.max(axis=0))
 
 It looks like the second column for sex is represented by 1s and 2s. It is a categorical variable. We can leave it with that representation as there are only two values. An alternative representation would be to have a IsMale column and IsFemale column. This isn't need as there are just two categories in this column, but would be if there were more than two.
 
+Another important factor when examining data is to consider the class balance. How common is the target variable? If it is a disease, how common is the disease? If it is extremely rare, then the machine learning system will not do well unless there is a huge amount of data. Let's calculate the class balance for this data set. We can use the sum function below as target contains True/False values, so sum will indicate the number of True values.
+
+~~~
+posCount = target.sum()
+N = target.shape[0]
+classBalance = 100 * posCount / N
+print(posCount,N)
+print(classBalance)
+~~~
+{: .language-python}
+
 ### Splitting data
 
 For machine learning, we want to have part of the data used for learning a pattern, and another part kept separate to evaluate our pattern. This is know as a training / testing data split. We're going to use one of the helper functions that scikit-learn provides to do this step. It will randomly assign 2/3 of the data to the training set, and 1/3 to the testing set. To get the same results as others, use the random_seed=0 parameter to get the same random distribution of samples.
