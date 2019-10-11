@@ -124,6 +124,7 @@ print(features.min(axis=0))
 > 
 > How about the minimum of each row?
 >
+> > ## Solution
 > > ~~~
 > > print(features.min(axis=1))
 > > ~~~
