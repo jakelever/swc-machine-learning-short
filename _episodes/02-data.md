@@ -125,6 +125,35 @@ print(classBalance)
 ~~~
 {: .language-python}
 
+### Principal Component Analysis (PCA)
+
+You should try to graph your data in different ways to understand the different values and see if there are any oddities to the data. One method is to calculate the principal components of the dataset. The principal components are the main axes of variance through the data. For instance, if the patients age was really the only thing that varied between the samples and the other variables changed only slightly, then the first principal component would be the age. However in the most cases, the first principal component will be a combination of multiple columns. PCA is a very powerful method but does have many limitations. There is suggested reading at the bottom.
+
+Let's do a principal component analysis using scikit-learn. We first import the PCA method from scikit-learn, create an instance asking for two principal components, then fit and transform our data. It will now have the same number of samples but only two columns. Think of this as a compressed version of our previous data.
+
+~~~
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+pca.fit(features)
+transformed = pca.transform(features)
+print(transformed.shape)
+~~~
+{: .language-python}
+
+And now we will plot this data on a 2d scatter plot. The reason to do this is to see if there are any obvious clusters and outliers.
+
+~~~
+import matplotlib.pyplot as plt
+plt.scatter(transformed[:,0], transformed[:,1])
+plt.title('PCA of all data')
+plt.xlabel('PCA 1')
+plt.ylabel('PCA 2')
+plt.show()
+~~~
+{: .language-python}
+
+Most of the data clumps into one cluster with some data points around the edge, but none of them are extreme outliers.
+
 ### Splitting data
 
 For machine learning, we want to have part of the data used for learning a pattern, and another part kept separate to evaluate our pattern. This is know as a training / testing data split. We're going to use one of the helper functions that scikit-learn provides to do this step. It will randomly assign 2/3 of the data to the training set, and 1/3 to the testing set. To get the same results as others, use the random_seed=0 parameter to get the same random distribution of samples.
