@@ -48,31 +48,33 @@ print(train_accuracy)
 ~~~
 {: .language-python}
 
-Take some time and try different rules (e.g. change the IF statement in the prediction loop.
-
-> ## Solution
->
-> There are many different rules that will get better performance on the training data. Below is one looking at BMI (column index 2).
->
-> ~~~
-> pred_train = []
-> for i in range(N_train):
->   if features_train[i,2] > 28:
->     pred_train.append(True)
->   else:
->     pred_train.append(False)
->    
-> matching = 0
-> for i in range(N_train):
->   if pred_train[i] == target_train[i]:
->     matching += 1
-
-> train_accuracy = matching / N_train
-> print(train_accuracy)
-> ~~~
-> {: .language-python}
->
-{: .solution}
+> ### Create a better rule
+> 
+> Take some time and try different rules (e.g. change the IF statement in the prediction loop.
+> 
+> > ### Solution
+> >
+> > There are many different rules that will get better performance on the training data. Below is one looking at BMI (column index 2).
+> >
+> > ~~~
+> > pred_train = []
+> > for i in range(N_train):
+> >   if features_train[i,2] > 28:
+> >     pred_train.append(True)
+> >   else:
+> >     pred_train.append(False)
+> >    
+> > matching = 0
+> > for i in range(N_train):
+> >   if pred_train[i] == target_train[i]:
+> >     matching += 1
+> >
+> > train_accuracy = matching / N_train
+> > print(train_accuracy)
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
 
 
 #### Checking with test data
@@ -171,20 +173,23 @@ print(calcAccuracy(target_test,pred_test))
 ~~~
 {: .language-python}
 
-As an exercise, let's explore the documentation of scikit-learn and choose another classifier. Try out a [LinearSVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) or a [LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier. The bottom of each page in the scikit-learn API provides an example. So let's just copy the example code in that defines the "clf" variable and try it with our existing code. Remember that you'll need to put in the correct from/import line at the top too. It'll be in the example code in the scikit-learn documentation.
-
-> ## Solution
->
-> Here's the solution for using a [LinearSVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) as the classifier.
->
-> ~~~
-> from sklearn.svm import LinearSVC
-> clf = LinearSVC(random_state=0, tol=1e-5)
-> clf.fit(features_train,target_train)
+### Try another scikit-learn classifier
 > 
-> pred_test = clf.predict(features_test)
-> print(calcAccuracy(target_test,pred_test))
-> ~~~
-> {: .language-python}
->
-{: .solution}
+> Let's explore the documentation of scikit-learn and choose another classifier. Try out a [LinearSVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) or a [LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier. The bottom of each page in the scikit-learn API provides an example. So let's just copy the example code in that defines the "clf" variable and try it with our existing code. Remember that you'll need to put in the correct from/import line at the top too. It'll be in the example code in the scikit-learn documentation.
+> 
+> > ## Solution
+> >
+> > Here's the solution for using a [LinearSVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) as the classifier.
+> >
+> > ~~~
+> > from sklearn.svm import LinearSVC
+> > clf = LinearSVC(random_state=0, tol=1e-5)
+> > clf.fit(features_train,target_train)
+> > 
+> > pred_test = clf.predict(features_test)
+> > print(calcAccuracy(target_test,pred_test))
+> > ~~~
+> > {: .language-python}
+> >
+> {: .solution}
+{: .challenge}

@@ -27,39 +27,39 @@ We're going to load the data directly from a website using numpy. The dataset is
 import numpy
 diabetes_set = numpy.loadtxt('https://www4.stat.ncsu.edu/~boos/var.select/diabetes.tab.txt',skiprows=1)
 ~~~
-{: .python}
+{: .language-python}
 
 We can use **type** to get the type of the object that we know have.
 
 ~~~
 print(type(diabetes_set))
 ~~~
-{: .python}
+{: .language-python}
 
 This is a numpy array, which is essentially a matrix with a lot of nice functions to help calculate statistics on them. First we should check how much data we have.
 
 ~~~
 print(diabetes_set.shape)
 ~~~
-{: .python}
+{: .language-python}
 
 So that gives us the number of rows (first) and columns (second).
 
 ### Exploring data
 
-We can access a specific value in the matrix using the square brackets. Python, and numpy, uses indices that start at zero. So the first row is indexed with zero. Hence to get the value in the 4th column of the 3rd row, we use the code below.
+We can access a specific value in the matrix using the square brackets..language-python, and numpy, uses indices that start at zero. So the first row is indexed with zero. Hence to get the value in the 4th column of the 3rd row, we use the code below.
 
 ~~~
 print(diabetes_set[3,2])
 ~~~
-{: .python}
+{: .language-python}
 
 We can use colons to create row and column ranges. For instance, if we wanted the first five rows with all the columns, we could use the line below.
 
 ~~~
 print(diabetes_set[:5,:])
 ~~~
-{: .python}
+{: .language-python}
 
 
 So we have 11 features for each of the 442 patients. We want to split off one feature that is the disease measure. And we want to use the other 10 features to try to make predictions. The code below does a slice of the diabetes_set matrix. The colon on its own asks for every row.
@@ -68,7 +68,7 @@ So we have 11 features for each of the 442 patients. We want to split off one fe
 disease_measure = diabetes_set[:,10]
 features = diabetes_set[:,0:10]
 ~~~
-{: .python}
+{: .language-python}
 
 What are these 10 features? The names are in the file and are added below for simplicity.
 
@@ -90,7 +90,7 @@ For this lesson, we are going to make a binary variable to predict, with a True 
 ~~~
 target = disease_measure > 180
 ~~~
-{: .python}
+{: .language-python}
 
 ### Triaging data
 
@@ -101,16 +101,35 @@ Numpy provides a few functions for simple statistics like minimums, maximums and
 ~~~
 print(features[:,0].min())
 ~~~
-{: .python}
+{: .language-python}
 
 But it'd take a little bit of time to do that for each column for minimum, maximum and any other statistics we might want. Instead, we can do it for all the columns at the same time using all the features and the axis parameter. The axis parameter instructs Numpy to calculate the statistic for each element in the row (for axis=0). We can get a number of statistics using the lines below.
 
 ~~~
 print(features.min(axis=0))
-print(features.mean(axis=0))
-print(features.max(axis=0))
 ~~~
-{: .python}
+
+> ### Min, max and mean
+> 
+> Calculate the minimum, mean and maximum for each column.
+> 
+> > ### Solution
+> > ~~~
+> > print(features.min(axis=0))
+> > print(features.mean(axis=0))
+> > print(features.max(axis=0))
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+> 
+> How about the minimum of each row?
+>
+> > ~~~
+> > print(features.min(axis=1))
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
 
 It looks like the second column for sex is represented by 1s and 2s. It is a categorical variable. We can leave it with that representation as there are only two values. An alternative representation would be to have a IsMale column and IsFemale column. This isn't need as there are just two categories in this column, but would be if there were more than two.
 
@@ -123,7 +142,7 @@ classBalance = 100 * posCount / N
 print(posCount,N)
 print(classBalance)
 ~~~
-{: .python}
+{: .language-python}
 
 ### Principal Component Analysis (PCA)
 
@@ -138,7 +157,7 @@ pca.fit(features)
 transformed = pca.transform(features)
 print(transformed.shape)
 ~~~
-{: .python}
+{: .language-python}
 
 And now we will plot this data on a 2d scatter plot. The reason to do this is to see if there are any obvious clusters and outliers.
 
@@ -150,7 +169,7 @@ plt.xlabel('PCA 1')
 plt.ylabel('PCA 2')
 plt.show()
 ~~~
-{: .python}
+{: .language-python}
 
 Alternatively, we can use plotly to create a more interactive scatter plot.
 
@@ -175,4 +194,4 @@ For machine learning, we want to have part of the data used for learning a patte
 from sklearn.model_selection import train_test_split
 features_train, features_test, target_train, target_test = train_test_split(features, target, test_size=0.33, random_state=0)
 ~~~
-{: .python}
+{: .language-python}
