@@ -88,3 +88,16 @@ pint("Hello")
 When we run the cell again (Ctrl+Enter), the error message appears below and can help us diagnose the problem.
 
 ![Error message from Google Colab](../figures/colab_fail.png)
+
+### Scikit-Learn
+
+We are going to use the versatile [scikit-learn Python library](https://scikit-learn.org). It has a large number of machine learning methods already implemented with a lot of helper tools to work with data. It is already installed on Google Colab and comes with Anaconda. For other Python installations, it needs to be installed separately.
+
+For other libraries, we used a single import statement. For example, for numpy we used the line below:
+
+~~~
+import numpy
+~~~
+{: .language-python}
+
+TODO: Decide on how to import sklearn for lesson.

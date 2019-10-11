@@ -13,15 +13,97 @@ keypoints:
 - "TODO"
 ---
 
+Below is a refresher of the code we've been using to classify the data.
 
-## Metrics
+~~~
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier(random_state=0)
 
-### Accuracy
+clf.fit(features_train,target_train)
 
-### Confusion Matrix
+pred_test = clf.predict(features_test)
+print(calcAccuracy(target_test,pred_test))
+~~~
+{: .language-python}
 
-### Recall, Precision, F1, etc
+#### True positives, etc
 
-### AUC curve?
+To calculate different performance metrics, we want to know where the classifier is succeeding and failing. The successes are charactered by **true positives** and **true negatives**. The failures are characterized by **false positives** and **false negatives**. Let's calculate the number of true positives.
+
+~~~
+true_positives = 0
+
+for i in range(N_test):
+  if target_test[i] == True and pred_test[i] == True:
+    true_positives += 1
+
+print(true_positives)
+~~~
+{: .language-python}
+
+Now as an exercise, calculate the other three counts: true negatives, false positives and false negatives.
+
+> ## Solution
+> 
+> ~~~
+> true_positives = 0
+> true_negatives = 0
+> false_positives = 0
+> false_negatives = 0
+> 
+> for i in range(N_test):
+>   if target_test[i] == True and pred_test[i] == True:
+>     true_positives += 1
+>   if target_test[i] == False and pred_test[i] == True:
+>     false_positives += 1
+>   if target_test[i] == True and pred_test[i] == False:
+>     false_negatives += 1
+>   if target_test[i] == False and pred_test[i] == False:
+>     true_negatives += 1
+>     
+> print(true_positives,true_negatives,false_positives,false_negatives)
+> ~~~
+> {: .language-python}
+> 
+{: .solution}
+
+#### Metrics
+
+With those four counts, you can calculate a variety of different metrics. These four counts make up the **confusion matrix**. For a binary classification problem (i.e. predicting positive/negative), it is a 2x2 grid. The [Wikipedia article](https://en.wikipedia.org/wiki/Confusion_matrix) gives a nice overview of the different metrics that you can calculate with these numbers. We calculate a few of the popular metrics below. All these metrics vary between 0 and 1 with higher meaning better performance.
+
+~~~
+accuracy = (true_positives + true_negatives) / (true_positives + true_negatives + false_positives + false_negatives)
+precision = true_positives / (true_positives + false_positives)
+recall = true_positives / (true_positives + false_negatives)
+print(accuracy, precision, recall)
+print(f1score)
+~~~
+{: .language-python}
+
+You should really consult more than one metric to decide if your classifier is succesful. However, many use the F1-score as their main focus. It is the harmonic mean of the precision and recall scores.
+~~~
+f1score = 2 * (precision * recall) / (precision + recall)
+print(f1score)
+~~~
+{: .language-python}
+
+#### Using scikit-learn from metrics
+
+You don't need to code this all manually next time. Scikit-learn provides a [number of functions for calculating classifier performance metrics](https://scikit-learn.org/stable/modules/classes.html#classification-metrics). We use several below, including one to calculate the confusion matrix itself. Note that the four counts are the same as we calculated previously.
+
+~~~
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(target_test,pred_test))
+
+from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score
+
+print(accuracy_score(target_test,pred_test))
+print(precision_score(target_test,pred_test))
+print(recall_score(target_test,pred_test))
+print(f1_score(target_test,pred_test))
+~~~
+{: .language-python}
+
+
 
 Further reading!
