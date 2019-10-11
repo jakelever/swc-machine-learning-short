@@ -48,11 +48,11 @@ print(train_accuracy)
 ~~~
 {: .language-python}
 
-> ### Create a better rule
+> ## Create a better rule
 > 
 > Take some time and try different rules (e.g. change the IF statement in the prediction loop.
 > 
-> > ### Solution
+> > ## Solution
 > >
 > > There are many different rules that will get better performance on the training data. Below is one looking at BMI (column index 2).
 > >
@@ -73,7 +73,7 @@ print(train_accuracy)
 > > print(train_accuracy)
 > > ~~~
 > > {: .language-python}
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 
@@ -173,7 +173,7 @@ print(calcAccuracy(target_test,pred_test))
 ~~~
 {: .language-python}
 
-### Try another scikit-learn classifier
+> ## Try another scikit-learn classifier
 > 
 > Let's explore the documentation of scikit-learn and choose another classifier. Try out a [LinearSVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) or a [LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier. The bottom of each page in the scikit-learn API provides an example. So let's just copy the example code in that defines the "clf" variable and try it with our existing code. Remember that you'll need to put in the correct from/import line at the top too. It'll be in the example code in the scikit-learn documentation.
 > 
@@ -191,5 +191,5 @@ print(calcAccuracy(target_test,pred_test))
 > > ~~~
 > > {: .language-python}
 > >
-> {: .solution}
+>{: .solution}
 {: .challenge}

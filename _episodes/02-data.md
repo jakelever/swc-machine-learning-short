@@ -109,18 +109,18 @@ But it'd take a little bit of time to do that for each column for minimum, maxim
 print(features.min(axis=0))
 ~~~
 
-> ### Min, max and mean
+> ## Min, max and mean
 > 
 > Calculate the minimum, mean and maximum for each column.
 > 
-> > ### Solution
+> > ## Solution
 > > ~~~
 > > print(features.min(axis=0))
 > > print(features.mean(axis=0))
 > > print(features.max(axis=0))
 > > ~~~
 > > {: .language-python}
-> {: .solution}
+>{: .solution}
 > 
 > How about the minimum of each row?
 >
@@ -128,7 +128,7 @@ print(features.min(axis=0))
 > > print(features.min(axis=1))
 > > ~~~
 > > {: .language-python}
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 It looks like the second column for sex is represented by 1s and 2s. It is a categorical variable. We can leave it with that representation as there are only two values. An alternative representation would be to have a IsMale column and IsFemale column. This isn't need as there are just two categories in this column, but would be if there were more than two.
