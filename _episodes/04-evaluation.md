@@ -125,6 +125,7 @@ roc_auc = auc(fpr, tpr)
 And then plot using matplotlib.
 
 ~~~
+import matplotlib.pyplot as plt
 plt.figure()
 plt.plot(fpr, tpr, color='darkorange',
          lw=2, label='ROC curve (area = %0.2f)' % roc_auc)
