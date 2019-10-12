@@ -104,4 +104,63 @@ print(f1_score(target_test,pred_test))
 ~~~
 {: .language-python}
 
+#### Receiver Operating Characteristic (ROC) curves and Area under the Curve (AUC)
 
+A popular visual method to inspect classifier performance is the receiver operating characteristic (ROC) curve. Most classifier methods actually score each sample while making a prediction, with higher scores meaning a positive prediction and lower scores meaning a negative prediction. An ROC curve is a visual representation of this scoring. It shows a curve that runs from bottom-left to top-right and ideally gets as closer as possible to top-right. The curve is monotonic and can't turn back on itself. If a classifier gave the highest scores to all the positive samples, then the curve would quickly shoot up towards the top-left corner before continuing to the right. Anyway, let's calculate the data for it and plot it. We will again use some scikit-learn helper functions.
+
+~~~
+from sklearn.svm import LinearSVC
+clf = LinearSVC(random_state=0)
+
+clf.fit(features_train,target_train)
+
+scores_test = clf.decision_function(features_test)
+
+from sklearn.metrics import roc_curve,auc
+fpr, tpr, _ = roc_curve(target_test, scores_test)
+roc_auc = auc(fpr, tpr)
+~~~
+{: .language-python}
+
+And then plot using matplotlib.
+
+~~~
+plt.figure()
+plt.plot(fpr, tpr, color='darkorange',
+         lw=2, label='ROC curve (area = %0.2f)' % roc_auc)
+plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver operating characteristic example')
+plt.legend(loc="lower right")
+plt.show()
+~~~
+{: .language-python}
+
+Or with plotly:
+
+~~~
+import plotly.graph_objects as go
+
+fig = go.Figure(data=go.Scatter(x=fpr, y=tpr, line={'color':'darkorange'}))
+fig.update_layout(title='Receiver operating characteristic example',
+                  font=dict(family='Arial', size=16),
+                  xaxis_title='False Positive Rate',
+                  yaxis_title='True Positive Rate',
+                  width = 600,
+                  height = 500,
+                  shapes=[
+                      go.layout.Shape(
+                          type="line",
+                          x0=0,
+                          y0=0,
+                          x1=1,
+                          y1=1,
+                          line=dict(color="navy",width=2,dash="dot")
+                      )
+                  ])
+fig.show()
+~~~
+{: .language-python}
