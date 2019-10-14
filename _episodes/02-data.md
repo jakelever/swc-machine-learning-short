@@ -1,7 +1,7 @@
 ---
 title: "Data"
 teaching: 15
-exercises: 0
+exercises: 10
 questions:
 - "How do I load data?"
 - "How do I triage data?"

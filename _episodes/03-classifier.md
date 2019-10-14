@@ -1,7 +1,7 @@
 ---
 title: "Classification"
-teaching: 15
-exercises: 0
+teaching: 20
+exercises: 20
 questions:
 - "How do you train a classifier?"
 objectives:

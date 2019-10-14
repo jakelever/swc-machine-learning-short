@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
-teaching: 5
-exercises: 0
+teaching: 10
+exercises: 5
 questions:
 - "What is machine learning? And what is AI? How does statistics fit into this?"
 - "What is Google Colab?"
