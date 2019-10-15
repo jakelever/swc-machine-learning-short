@@ -76,7 +76,6 @@ accuracy = (true_positives + true_negatives) / (true_positives + true_negatives 
 precision = true_positives / (true_positives + false_positives)
 recall = true_positives / (true_positives + false_negatives)
 print(accuracy, precision, recall)
-print(f1score)
 ~~~
 {: .language-python}
 

@@ -8,7 +8,8 @@ objectives:
 - "Understand that there are many different classifier methods."
 - "Train a classifier on our dataset"
 keypoints:
-- "TODO"
+- "You should learn a pattern using the training data and then see if the pattern holds with the testing data"
+- "Scikit-learn has many different classifiers. You may need to test a few to see which is best for your dataset"
 ---
 
 ### Classification
@@ -143,7 +144,7 @@ print(calcAccuracy(target_test,pred_test))
 ~~~
 {: .language-python}
 
-That's
+That does seem great.
 
 
 ### Remember class balance!

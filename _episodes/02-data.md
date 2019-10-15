@@ -194,5 +194,13 @@ For machine learning, we want to have part of the data used for learning a patte
 ~~~
 from sklearn.model_selection import train_test_split
 features_train, features_test, target_train, target_test = train_test_split(features, target, test_size=0.33, random_state=0)
+
+print(features_train.shape)
+print(features_test.shape)
+print(target_train.shape)
+print(target_test.shape)
+
+N_train = target_train.shape[0]
+N_test = target_test.shape[0]
 ~~~
 {: .language-python}
