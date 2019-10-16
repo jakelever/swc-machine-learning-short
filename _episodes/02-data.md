@@ -1,6 +1,6 @@
 ---
 title: "Data"
-teaching: 15
+teaching: 20
 exercises: 10
 questions:
 - "How do I load data?"
