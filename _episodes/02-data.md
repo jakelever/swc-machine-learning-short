@@ -165,19 +165,6 @@ plt.show()
 ~~~
 {: .language-python}
 
-Alternatively, we can use plotly to create a more interactive scatter plot.
-
-~~~
-import plotly.graph_objects as go
-
-fig = go.Figure(data=go.Scatter(
-    x=transformed[:,0], 
-    y=transformed[:,1], 
-    mode='markers', 
-    hovertext=list(range(transformed.shape[0]))))
-fig.show()
-~~~
-
 Most of the data clumps into one cluster with some data points around the edge, but none of them are extreme outliers.
 
 ### Splitting data
