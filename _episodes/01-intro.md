@@ -47,6 +47,19 @@ Then rename it at the top and give it a memorable name.
 
 To get back to this notebook later, you can find it in the "Colab Notebooks" directory in your Google Drive at <https://drive.google.com>.
 
+> ### Python 2 versus Python 3
+>
+> For many years, Python has had two versions that different people have used, version 2 (v2.7 is the latest) and version 3, currently (v3.8 is the latest). There are small but key differences between the two. However, v2 is now unsupported and all Python code should now be written in v3. One example of the differences that you may see immediately are shown below with different print statements.
+> ~~~
+> # This is Python 2 (and unsupported now)
+> print "Hello"
+>
+> # This is Python 3
+> print("Hello")
+> ~~~
+> {: .language-python}
+{: .callout}
+
 ### Hello World
 
 Let's write a single Python command and then run it.
