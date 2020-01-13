@@ -17,29 +17,29 @@ The most challenging part of machine learning is getting good data, and enough o
 
 ### The data set
 
-Scikit-learn comes with several example data sets. We are going to use a dataset of diabetes patients, originally published in 2004. The dataset contains measurements for 442 patients along with a disease measure.
+We are going to use a simulated dataset of patients with the fictional disease Mumblemumps. The dataset contains measurements for 500 patients along with a disease status. The dataset can be viewed at <https://github.com/jakelever/swc-machine-learning-short/blob/gh-pages/data/dataset.tsv>.
 
 ### Loading data
 
-We're going to load the data directly from a website using numpy. The dataset is accessible at <https://www4.stat.ncsu.edu/~boos/var.select/diabetes.tab.txt>
+We're going to load the data directly from the Github repo using numpy. The dataset is accessible in raw form at <https://raw.githubusercontent.com/jakelever/swc-machine-learning-short/gh-pages/data/dataset.tsv>.
 
 ~~~
 import numpy
-diabetes_set = numpy.loadtxt('https://www4.stat.ncsu.edu/~boos/var.select/diabetes.tab.txt',skiprows=1)
+dataset = numpy.loadtxt('https://raw.githubusercontent.com/jakelever/swc-machine-learning-short/gh-pages/data/dataset.tsv',skiprows=1)
 ~~~
 {: .language-python}
 
 We can use **type** to get the type of the object that we know have.
 
 ~~~
-print(type(diabetes_set))
+print(type(dataset))
 ~~~
 {: .language-python}
 
 This is a numpy array, which is essentially a matrix with a lot of nice functions to help calculate statistics on them. First we should check how much data we have.
 
 ~~~
-print(diabetes_set.shape)
+print(dataset.shape)
 ~~~
 {: .language-python}
 
@@ -50,14 +50,14 @@ So that gives us the number of rows (first) and columns (second).
 We can access a specific value in the matrix using the square brackets..language-python, and numpy, uses indices that start at zero. So the first row is indexed with zero. Hence to get the value in the 4th column of the 3rd row, we use the code below.
 
 ~~~
-print(diabetes_set[3,2])
+print(dataset[3,2])
 ~~~
 {: .language-python}
 
 We can use colons to create row and column ranges. For instance, if we wanted the first five rows with all the columns, we could use the line below.
 
 ~~~
-print(diabetes_set[:5,:])
+print(dataset[:5,:])
 ~~~
 {: .language-python}
 
@@ -65,25 +65,24 @@ print(diabetes_set[:5,:])
 So we have 11 features for each of the 442 patients. We want to split off one feature that is the disease measure. And we want to use the other 10 features to try to make predictions. The code below does a slice of the diabetes_set matrix. The colon on its own asks for every row.
 
 ~~~
-disease_measure = diabetes_set[:,10]
-features = diabetes_set[:,0:10]
+disease_measure = dataset[:,10]
+features = dataset[:,0:10]
 ~~~
 {: .language-python}
 
-What are these 10 features? The names are in the file and are added below for simplicity.
+What are these 9 features? The names are in the file and are added below for simplicity.
 
 | Column Index | Feature                |
 |--------------|------------------------|
 | 0            | Age                    |
 | 1            | Sex                    |
-| 2            | Body mass index        |
-| 3            | Average blood pressure |
-| 4            | S1                     |
-| 5            | S2                     |
-| 6            | S3                     |
-| 7            | S4                     |
-| 8            | S5                     |
-| 9            | S6                     |
+| 2            | Height                 |
+| 3            | Weight                 |
+| 4            | Blood Marker A         |
+| 5            | Blood Marker B         |
+| 6            | Blood Marker C         |
+| 7            | Blood Marker D         |
+| 8            | Blood Marker E         |
 
 For this lesson, we are going to make a binary variable to predict, with a True or False value. We will threshold the disease_measure with a value to create a target variable which represents the disease status of the patient after a year.
 
