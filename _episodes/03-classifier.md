@@ -27,7 +27,7 @@ We can build a basic classifier using an IF statement. The code below iterates o
 ~~~
 pred_train = []
 for i in range(N_train):
-  if features_train[i,2] > 25:
+  if features_train[i,0] > 45:
     pred_train.append(True)
   else:
     pred_train.append(False)
@@ -55,12 +55,12 @@ print(train_accuracy)
 > 
 > > ## Solution
 > >
-> > There are many different rules that will get better performance on the training data. Below is one looking at BMI (column index 2).
+> > There are many different rules that will get better performance on the training data. Below is one looking at height (column index 2).
 > >
 > > ~~~
 > > pred_train = []
 > > for i in range(N_train):
-> >   if features_train[i,2] > 28:
+> >   if features_train[i,2] > 180:
 > >     pred_train.append(True)
 > >   else:
 > >     pred_train.append(False)
@@ -100,7 +100,7 @@ We can now do a classification of the test data using the same rule that we deci
 ~~~
 pred_test = []
 for i in range(N_test):
-  if features_test[i,2] > 25:
+  if features_test[i,0] > 45:
     pred_test.append(True)
   else:
     pred_test.append(False)
