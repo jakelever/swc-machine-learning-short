@@ -47,7 +47,7 @@ So that gives us the number of rows (first) and columns (second).
 
 ### Exploring data
 
-We can access a specific value in the matrix using the square brackets..language-python, and numpy, uses indices that start at zero. So the first row is indexed with zero. Hence to get the value in the 4th column of the 3rd row, we use the code below.
+We can access a specific value in the matrix using the square brackets. Numpy uses indices that start at zero. So the first row is indexed with zero. Hence to get the value in the 4th column of the 3rd row, we use the code below.
 
 ~~~
 print(dataset[3,2])
@@ -61,12 +61,11 @@ print(dataset[:5,:])
 ~~~
 {: .language-python}
 
-
-So we have 11 features for each of the 442 patients. We want to split off one feature that is the disease measure. And we want to use the other 10 features to try to make predictions. The code below does a slice of the diabetes_set matrix. The colon on its own asks for every row.
+So we have 10 features for each of the 500 patients. We want to split off one feature that is the disease status. And we want to use the other 9 features to try to make predictions. The code below does a slice of the diabetes_set matrix. The colon on its own asks for every row.
 
 ~~~
-disease_measure = dataset[:,10]
-features = dataset[:,0:10]
+target = dataset[:,9]
+features = dataset[:,0:9]
 ~~~
 {: .language-python}
 
@@ -84,12 +83,7 @@ What are these 9 features? The names are in the file and are added below for sim
 | 7            | Blood Marker D         |
 | 8            | Blood Marker E         |
 
-For this lesson, we are going to make a binary variable to predict, with a True or False value. We will threshold the disease_measure with a value to create a target variable which represents the disease status of the patient after a year.
-
-~~~
-target = disease_measure > 180
-~~~
-{: .language-python}
+The Has_Disease column has been stored into target. This is the column that we want to learn to predict, so that we can help diagnose patients with Mumblemumps.
 
 ### Triaging data
 
