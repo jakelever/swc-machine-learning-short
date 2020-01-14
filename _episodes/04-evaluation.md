@@ -17,12 +17,12 @@ Below is a refresher of the code we've been using to classify the data.
 
 ~~~
 from sklearn.ensemble import RandomForestClassifier
-clf = RandomForestClassifier(random_state=0)
+clf = RandomForestClassifier(max_depth=2, random_state=0)
 
 clf.fit(features_train,target_train)
 
-pred_test = clf.predict(features_test)
-print(calcAccuracy(target_test,pred_test))
+pred_validation = clf.predict(features_validation)
+print(calcAccuracy(target_validation,pred_validation))
 ~~~
 {: .language-python}
 
@@ -33,15 +33,15 @@ To calculate different performance metrics, we want to know where the classifier
 ~~~
 true_positives = 0
 
-for i in range(N_test):
-  if target_test[i] == True and pred_test[i] == True:
+for i in range(N_validation):
+  if target_validation[i] == True and pred_validation[i] == True:
     true_positives += 1
 
 print(true_positives)
 ~~~
 {: .language-python}
 
-Now as an exercise, calculate the other three counts: true negatives, false positives and false negatives.
+Let's calculate the other three counts: true negatives, false positives and false negatives.
 
 > ## Solution
 > 
@@ -51,14 +51,14 @@ Now as an exercise, calculate the other three counts: true negatives, false posi
 > false_positives = 0
 > false_negatives = 0
 > 
-> for i in range(N_test):
->   if target_test[i] == True and pred_test[i] == True:
+> for i in range(N_validation):
+>   if target_validation[i] == True and pred_validation[i] == True:
 >     true_positives += 1
->   if target_test[i] == False and pred_test[i] == True:
+>   if target_validation[i] == False and pred_validation[i] == True:
 >     false_positives += 1
->   if target_test[i] == True and pred_test[i] == False:
+>   if target_validation[i] == True and pred_validation[i] == False:
 >     false_negatives += 1
->   if target_test[i] == False and pred_test[i] == False:
+>   if target_validation[i] == False and pred_validation[i] == False:
 >     true_negatives += 1
 >     
 > print(true_positives,true_negatives,false_positives,false_negatives)
@@ -92,75 +92,28 @@ You don't need to code this all manually next time. Scikit-learn provides a [num
 
 ~~~
 from sklearn.metrics import confusion_matrix
-print(confusion_matrix(target_test,pred_test))
+print(confusion_matrix(target_validation,pred_validation))
 
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score
+
+print(accuracy_score(target_validation,pred_validation))
+print(precision_score(target_validation,pred_validation))
+print(recall_score(target_validation,pred_validation))
+print(f1_score(target_validation,pred_validation))
+~~~
+{: .language-python}
+
+#### Final evaluation using the test set
+
+We've tried a few different models and the Random Forest classifier seems to do quite well, or perhaps you found another one that does better. Let's do a final evaluation using the held-out testing set. These results would be the ones to report in any publications or report. You should only be checking against your test set once.
+
+~~~
+# Use the classifier to make the test predictions
+pred_test = clf.predict(features_test)
 
 print(accuracy_score(target_test,pred_test))
 print(precision_score(target_test,pred_test))
 print(recall_score(target_test,pred_test))
 print(f1_score(target_test,pred_test))
-~~~
-{: .language-python}
-
-#### Receiver Operating Characteristic (ROC) curves and Area under the Curve (AUC)
-
-A popular visual method to inspect classifier performance is the receiver operating characteristic (ROC) curve. Most classifier methods actually score each sample while making a prediction, with higher scores meaning a positive prediction and lower scores meaning a negative prediction. An ROC curve is a visual representation of this scoring. It shows a curve that runs from bottom-left to top-right and ideally gets as closer as possible to top-right. The curve is monotonic and can't turn back on itself. If a classifier gave the highest scores to all the positive samples, then the curve would quickly shoot up towards the top-left corner before continuing to the right. Anyway, let's calculate the data for it and plot it. We will again use some scikit-learn helper functions.
-
-~~~
-from sklearn.svm import LinearSVC
-clf = LinearSVC(random_state=0)
-
-clf.fit(features_train,target_train)
-
-scores_test = clf.decision_function(features_test)
-
-from sklearn.metrics import roc_curve,auc
-fpr, tpr, _ = roc_curve(target_test, scores_test)
-roc_auc = auc(fpr, tpr)
-~~~
-{: .language-python}
-
-And then plot using matplotlib.
-
-~~~
-import matplotlib.pyplot as plt
-plt.figure()
-plt.plot(fpr, tpr, color='darkorange',
-         lw=2, label='ROC curve (area = %0.2f)' % roc_auc)
-plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-plt.xlim([0.0, 1.0])
-plt.ylim([0.0, 1.05])
-plt.xlabel('False Positive Rate')
-plt.ylabel('True Positive Rate')
-plt.title('Receiver operating characteristic example')
-plt.legend(loc="lower right")
-plt.show()
-~~~
-{: .language-python}
-
-Or with plotly:
-
-~~~
-import plotly.graph_objects as go
-
-fig = go.Figure(data=go.Scatter(x=fpr, y=tpr, line={'color':'darkorange'}))
-fig.update_layout(title='Receiver operating characteristic example',
-                  font=dict(family='Arial', size=16),
-                  xaxis_title='False Positive Rate',
-                  yaxis_title='True Positive Rate',
-                  width = 600,
-                  height = 500,
-                  shapes=[
-                      go.layout.Shape(
-                          type="line",
-                          x0=0,
-                          y0=0,
-                          x1=1,
-                          y1=1,
-                          line=dict(color="navy",width=2,dash="dot")
-                      )
-                  ])
-fig.show()
 ~~~
 {: .language-python}
