@@ -27,7 +27,7 @@ We can build a basic classifier using an IF statement. The code below iterates o
 ~~~
 pred_train = []
 for i in range(N_train):
-  if features_train[i,0] > 45:
+  if features_train[i,0] > 50:
     pred_train.append(True)
   else:
     pred_train.append(False)
@@ -98,14 +98,14 @@ print(calcAccuracy(target_train,pred_train))
 We can now do a classification of the test data using the same rule that we decided before. Change the code to whatever rule you decided gave the best performance. Does it give similar performance for the test data? Likely not. Here we have fit a method to the training data and picked the one with the best performance, which is what we want. But we will have (slightly) overfit the data and so won't get as good performance on new unseen data (the test data).
 
 ~~~
-pred_test = []
-for i in range(N_test):
-  if features_test[i,0] > 45:
-    pred_test.append(True)
+pred_validation = []
+for i in range(N_validation):
+  if features_validation[i,0] > 50:
+    pred_validation.append(True)
   else:
-    pred_test.append(False)
+    pred_validation.append(False)
     
-print(calcAccuracy(target_test,pred_test))
+print(calcAccuracy(target_validation,pred_validation))
 ~~~
 {: .language-python}
 
@@ -136,11 +136,11 @@ print(calcAccuracy(target_train,pred_train))
 ~~~
 {: .language-python}
 
-The training performance certainly looks like amazing, but the test performance is really what we care about.
+The training performance certainly looks like amazing, but the validation performance is what matters for now.
 
 ~~~
-pred_test = clf.predict(features_test)
-print(calcAccuracy(target_test,pred_test))
+pred_validation = clf.predict(features_validation)
+print(calcAccuracy(target_validation,pred_validation))
 ~~~
 {: .language-python}
 
@@ -149,11 +149,11 @@ That does seem great.
 
 ### Remember class balance!
 
-Remember that for this data set, the positive cases are in the minority. How would the accuracy looks if we created a stupid classifier that predicts everything as False? For this, we will use a list comprehension to create a list containing N_test Falses.
+Remember that for this data set, the positive cases are in the minority. How would the accuracy looks if we created a stupid classifier that predicts everything as False? For this, we will use a list comprehension to create a list containing N_validation Falses.
 
 ~~~
-pred_test = [ False for _ in range(N_test)]
-print(calcAccuracy(target_test,pred_test))
+pred_validation = [ False for _ in range(N_validation)]
+print(calcAccuracy(target_validation,pred_validation))
 ~~~
 {: .language-python}
 
@@ -161,34 +161,23 @@ Unfortunately, that gives performance that seems okay. But we know it's not actu
 
 ### A more advanced classifier
 
-Maybe the KNeighborsClassifier was too simple. A very popular classifier is the Random Forests classifier. Using it is similar to the KNeighborsClassifier, but we import a different classifier. Let's see what the performance does then.
-
-~~~
-from sklearn.ensemble import RandomForestClassifier
-clf = RandomForestClassifier(random_state=0)
-
-clf.fit(features_train,target_train)
-
-pred_test = clf.predict(features_test)
-print(calcAccuracy(target_test,pred_test))
-~~~
 {: .language-python}
 
 > ## Try another scikit-learn classifier
 > 
-> Let's explore the documentation of scikit-learn and choose another classifier. Try out a [LinearSVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) or a [LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier. The bottom of each page in the scikit-learn API provides an example. So let's just copy the example code in that defines the "clf" variable and try it with our existing code. Remember that you'll need to put in the correct from/import line at the top too. It'll be in the example code in the scikit-learn documentation.
+> Maybe the KNeighborsClassifier was too simple. Let's explore the documentation of scikit-learn and choose another classifier. Try out a [Random Forests](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html). The bottom of each page in the scikit-learn API provides an example. So let's just copy the example code in that defines the "clf" variable and try it with our existing code. Remember that you'll need to put in the correct from/import line at the top too. It'll be in the example code in the scikit-learn documentation.
 > 
 > > ## Solution
 > >
 > > Here's the solution for using a [LinearSVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) as the classifier.
 > >
 > > ~~~
-> > from sklearn.svm import LinearSVC
-> > clf = LinearSVC(random_state=0, tol=1e-5)
+> > from sklearn.ensemble import RandomForestClassifier
+> > clf = RandomForestClassifier(max_depth=2, random_state=0)
 > > clf.fit(features_train,target_train)
 > > 
-> > pred_test = clf.predict(features_test)
-> > print(calcAccuracy(target_test,pred_test))
+> > pred_validation = clf.predict(features_validation)
+> > print(calcAccuracy(target_validation,pred_validation))
 > > ~~~
 > > {: .language-python}
 > >
