@@ -169,18 +169,22 @@ Most of the data clumps into one cluster with some data points around the edge, 
 
 ### Splitting data
 
-For machine learning, we want to have part of the data used for learning a pattern, and another part kept separate to evaluate our pattern. This is know as a training / testing data split. We're going to use one of the helper functions that scikit-learn provides to do this step. It will randomly assign 2/3 of the data to the training set, and 1/3 to the testing set. To get the same results as others, use the random_seed=0 parameter to get the same random distribution of samples.
+For machine learning, we want to have part of the data used for learning a pattern (training), a second part for helping to decide which pattern to use (validation) and a final part kept separate for our final evaluations. This is know as a training / validation / testing data split. We're going to use one of the helper functions that scikit-learn provides to do this step. It will randomly assign 80% of the data to the training/validation set, and 20% to the testing set. We then run it again to split up the training and validation sets. To get the same results as others, use the random_seed=0 parameter to get the same random distribution of samples.
 
 ~~~
 from sklearn.model_selection import train_test_split
-features_train, features_test, target_train, target_test = train_test_split(features, target, test_size=0.33, random_state=0)
+features_train, features_test, target_train, target_test = train_test_split(features, target, test_size=0.2, random_state=0)
+features_train, features_validation, target_train, target_validation = train_test_split(features_train, target_train, test_size=0.2, random_state=0)
 
 print(features_train.shape)
+print(features_validation.shape)
 print(features_test.shape)
 print(target_train.shape)
+print(target_validation.shape)
 print(target_test.shape)
 
 N_train = target_train.shape[0]
+N_validation = target_validation.shape[0]
 N_test = target_test.shape[0]
 ~~~
 {: .language-python}
