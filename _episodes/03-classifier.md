@@ -83,10 +83,10 @@ print(train_accuracy)
 Once we've decided on a method for classification, we should check if it holds for the test data which wasn't use for creating the classifier. This way we can have some confidence that the classifier might would for new data that it has never seen before. First, let's wrap up the code we created to calculate accuracy into a function so that we don't have to rewrite it every time.
 
 ~~~
-def calcAccuracy(pred,target):
+def calcAccuracy(target,pred):
   matching = 0
   for i in range(len(pred)):
-    if pred[i] == target[i]:
+    if target[i] == pred[i]:
       matching += 1
   accuracy = matching / len(pred)
   return accuracy
