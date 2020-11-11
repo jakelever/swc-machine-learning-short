@@ -47,7 +47,7 @@ So that gives us the number of rows (first) and columns (second).
 
 ### Exploring data
 
-We can access a specific value in the matrix using the square brackets. Numpy uses indices that start at zero. So the first row is indexed with zero. Hence to get the value in the 4th column of the 3rd row, we use the code below.
+We can access a specific value in the matrix using the square brackets. Numpy uses indices that start at zero. So the first row is indexed with zero. Hence to get the value in the 4th row (index=3) and 3rd column (index=2), we use the code below.
 
 ~~~
 print(dataset[3,2])
