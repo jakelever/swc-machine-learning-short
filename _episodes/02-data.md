@@ -89,7 +89,15 @@ The Has_Disease column has been stored into target. This is the column that we w
 
 It's always a good idea to look into your data to get an idea for the ranges of the data, the types of data, etc. There may be errors in your data and you want to know this before you start using erroneous data in a machine learning system.
 
-Numpy provides a few functions for simple statistics like minimums, maximums and averages. To calculate the minimum of the first column, we could use the command below.
+Numpy provides a few functions for simple statistics like minimums, maximums and averages. To make the output slightly nicer, we'll turn off scientific notation with the command below.
+
+~~~
+# This gets NumPy to not use scientific notation (which for another dataset may be a bad idea)
+numpy.set_printoptions(suppress=True)
+~~~
+{: .language-python}
+
+To calculate the minimum of the first column, we could use the command below.
 
 ~~~
 print(features[:,0].min())
