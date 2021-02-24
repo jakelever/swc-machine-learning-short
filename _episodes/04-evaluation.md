@@ -117,3 +117,26 @@ print(recall_score(target_test,pred_test))
 print(f1_score(target_test,pred_test))
 ~~~
 {: .language-python}
+
+
+#### Saving your classifier
+
+We've built a classifier that we think performs well and would like to use it for future data. Do we need to retrain it every time? No, we can save the trained model and load it for future use. Scikit-learn supports Python pickling as below to save it.
+
+~~~
+import pickle
+
+# Save the trained classifier to "saved_classifier.pickle" file
+with open('saved_classifier.pickle','wb') as f:
+  pickle.dump(clf,f)
+~~~
+{: .language-python}
+
+And then you could load it in the future with the following code and start predicting (without having to use train). The pickle saves all the necessary information that the classifier needs to start predicting (as long as you trained it before saving it).
+
+~~~
+# Load the classifier from the file. It's now ready for predicting!
+with open('saved_classifier.pickle','rb') as f:
+  clf = pickle.load(f)
+~~~
+{: .language-python}
