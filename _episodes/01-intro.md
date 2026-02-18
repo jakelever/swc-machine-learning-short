@@ -18,7 +18,6 @@ keypoints:
 
 Machine learning is broadly **using patterns in data to achieve a goal**. The goal can be pretty diverse, but the most common is the task of prediction. You have a set of data with measured properties of multiple types, and some new data for which you don't know the type. You would like to predict the type using the measured properties. This is known as **supervised learning**. It is supervised because you have known **labels** (the types) for the different data items. **Unsupervised learning** is the different case where you don't have particular labels. A classic unsupervised task is to find out how many different types of samples. Today, we will focus on a supervised task.
 
-
 #### Machine learning versus statistics
 
 How is machine learning related to statistics? They sometimes use similar methods so they seem to be related. Very broadly, statistics is asking questions about the data and using more interpretable methods in order to make conclusions about the data. Machine learning is using the data to achieve another goal, e.g. for predicting new data. Each statistics or machine learning method falls somewhere on the continuum below. Many machine learning methods are very difficult to interpret but can achieve goals that are unattainable by statistical methods.
@@ -46,19 +45,6 @@ Then rename it at the top and give it a memorable name.
 ![Renaming notebook](../figures/colab_rename.png)
 
 To get back to this notebook later, you can find it in the "Colab Notebooks" directory in your Google Drive at <https://drive.google.com>.
-
-> ### Python 2 versus Python 3
->
-> For many years, Python has had two versions that different people have used, version 2 (v2.7 is the latest) and version 3, currently (v3.8 is the latest). There are small but key differences between the two. However, v2 is now unsupported and all Python code should now be written in v3. One example of the differences that you may see immediately are shown below with different print statements.
-> ~~~
-> # This is Python 2 (and unsupported now)
-> print "Hello"
->
-> # This is Python 3
-> print("Hello")
-> ~~~
-> {: .language-python}
-{: .callout}
 
 ### Hello World
 
